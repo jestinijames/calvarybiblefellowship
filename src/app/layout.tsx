@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
+import { Open_Sans } from 'next/font/google';
 import * as React from 'react';
+
+import '@/styles/globals.css';
 
 import { siteConfig } from '@/constant/config';
 
@@ -42,6 +45,11 @@ export const metadata: Metadata = {
   ],
 };
 
+const openSans = Open_Sans({
+  weight: ['400', '700'], // Specify the weights you want to include
+  subsets: ['latin'], // Specify any subsets if needed
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -49,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body className={openSans.className}>{children}</body>
     </html>
   );
 }
