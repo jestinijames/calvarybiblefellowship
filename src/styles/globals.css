@@ -25,13 +25,9 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
 
 code {
-  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
-    monospace;
   font-size: 1em;
 }
 
@@ -43,7 +39,6 @@ button,
 input,
 select,
 textarea {
-  font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -89,7 +84,6 @@ html {
 }
 
 body {
-  font-family: inherit;
   line-height: inherit;
 }
 
@@ -142,8 +136,6 @@ textarea {
 }
 
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
 }
 
 iframe,
@@ -481,7 +473,6 @@ select {
 }
 
 .font-serif {
-  font-family: Tiempos Text, ui-serif, Georgia, serif;
 }
 
 .font-bold {
@@ -1531,65 +1522,43 @@ select {
 
 @font-face {
   font-display: auto;
-  font-family: 'Tiempos Text';
   font-style: normal;
   font-weight: 400;
-  src: url(/dist/fonts/TiemposText-Regular.woff2) format('woff2'),
-    url(/dist/fonts/TiemposText-Regular.woff) format('woff');
 }
 
 @font-face {
   font-display: auto;
-  font-family: 'Tiempos Text';
   font-style: italic;
   font-weight: 400;
-  src: url(/dist/fonts/TiemposText-RegularItalic.woff2) format('woff2'),
-    url(/dist/fonts/TiemposText-RegularItalic.woff) format('woff');
 }
 
 @font-face {
   font-display: auto;
-  font-family: 'Tiempos Text';
   font-style: normal;
-  font-weight: 500;
-  src: url(/dist/fonts/TiemposText-Medium.woff2) format('woff2'),
-    url(/dist/fonts/TiemposText-Medium.woff) format('woff');
 }
 
 @font-face {
   font-display: auto;
-  font-family: 'Tiempos Text';
   font-style: italic;
   font-weight: 500;
-  src: url(/dist/fonts/TiemposText-MediumItalic.woff2) format('woff2'),
-    url(/dist/fonts/TiemposText-MediumItalic.woff) format('woff');
 }
 
 @font-face {
   font-display: auto;
-  font-family: 'Tiempos Text';
   font-style: normal;
   font-weight: 700;
-  src: url(/dist/fonts/TiemposText-Semibold.woff2) format('woff2'),
-    url(/dist/fonts/TiemposText-Semibold.woff) format('woff');
 }
 
 @font-face {
   font-display: auto;
-  font-family: 'Tiempos Text';
   font-style: italic;
   font-weight: 700;
-  src: url(/dist/fonts/TiemposText-SemiboldItalic.woff2) format('woff2'),
-    url(/dist/fonts/TiemposText-SemiboldItalic.woff) format('woff');
 }
 
 @font-face {
   font-display: auto;
-  font-family: 'Pitch Sans';
   font-style: normal;
   font-weight: 600;
-  src: url(/dist/fonts/PitchSans-Semibold.woff2) format('woff2'),
-    url(/dist/fonts/PitchSans-Semibold.woff) format('woff');
 }
 
 ::selection {
@@ -1647,7 +1616,6 @@ svg {
 body {
   --tw-bg-opacity: 1;
   background-color: rgba(9, 9, 28, var(--tw-bg-opacity));
-  font-family: Tiempos Text, ui-serif, Georgia, serif;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
@@ -1793,7 +1761,6 @@ ul {
 
 .subhead,
 .subhead p {
-  font-family: Pitch Sans, ui-sans-serif, Arial, sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1832,8 +1799,6 @@ ul {
 .rich-text pre {
   --tw-bg-opacity: 1;
   background-color: rgba(9, 9, 28, var(--tw-bg-opacity));
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
   font-size: 0.75rem;
   line-height: 1rem;
   margin-top: 2rem;
