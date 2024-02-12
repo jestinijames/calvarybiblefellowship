@@ -15,7 +15,7 @@ export default function SermonPage() {
   };
 
   return (
-    <>
+    <div className='bg-black relative z-10' style={{ opacity: 1 }}>
       <Header />
       <main role='main' className='main relative z-10'>
         {/* Headings */}
@@ -160,6 +160,6 @@ export default function SermonPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

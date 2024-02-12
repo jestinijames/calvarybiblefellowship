@@ -15,7 +15,7 @@ export default function PodcastPage() {
   };
 
   return (
-    <>
+    <div className='bg-black relative z-10' style={{ opacity: 1 }}>
       <Header />
       <main role='main' className='main relative z-10'>
         {/* Headings */}
@@ -38,7 +38,7 @@ export default function PodcastPage() {
           </div>
         </section>
         <div className='wrapper relative load-more-wrapper'>
-          {/* Sermons list */}
+          {/* podcasts list */}
           <div className='fade-hover-area'>
             <div className='flex flex-wrap load-more-container'>
               {homepagePodcasts.slice(0, visibleItems).map((podcast, index) => (
@@ -161,6 +161,6 @@ export default function PodcastPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

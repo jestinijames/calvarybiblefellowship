@@ -1,10 +1,11 @@
 'use client';
 
-//import localFont from 'next/font/local';
-//import * from "../../src/public/fonts/swis721-ex-bt.woff2"
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Footer, Header } from '@/components/Layout';
 
@@ -14,8 +15,6 @@ import {
   homepageHero,
   homepagePodcasts,
 } from '@/constant/config';
-
-//const myFont = localFont({ src: '../../public/fonts/swis721-ex-bt.woff2' });
 
 export default function HomePage() {
   return (
@@ -363,7 +362,6 @@ export default function HomePage() {
                               <picture>
                                 <source
                                   type='image/webp'
-                                  data-srcset='parent.jpg'
                                   data-sizes='100vw'
                                   src={podcast.image}
                                 />
@@ -383,7 +381,7 @@ export default function HomePage() {
                               </div>
                               <div className='border-t border-gray-600 flex items-center mt-auto mb-0 py-2'>
                                 <span className='font-sans font-bold'>
-                                  Listen
+                                  Explore
                                 </span>
                                 <svg
                                   className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin'
@@ -461,6 +459,8 @@ export default function HomePage() {
       </main>
       {/* Footer */}
       <Footer />
+      {/* Toaster */}
+      <ToastContainer />
     </div>
   );
 }
