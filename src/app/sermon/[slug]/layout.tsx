@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import * as React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Podcasts',
-  description: 'Discover transformative podcasts for spiritual growth.',
+  title: 'sermons',
+  description:
+    'Watch and listen to our sermons for spiritual growth and transformation.',
 };
 
 export default function ComponentsLayout({

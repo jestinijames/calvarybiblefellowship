@@ -134,7 +134,7 @@ export default function PodcastPage() {
                 </div>
                 <div className='w-full md:w-1/2 px-2 my-2'>
                   <a
-                    className='group flex flex-col h-full px-12 py-6 headline-defaults copy-defaults transition-colors no-child-pointers bg-cyan text-black hover:bg-white'
+                    className='group flex flex-col h-full px-12 py-6 headline-defaults copy-defaults transition-colors no-child-pointers bg-[#f56d6e] text-black hover:bg-white'
                     href='/what-we-believe'
                   >
                     <p className='subhead'>LEARN</p>

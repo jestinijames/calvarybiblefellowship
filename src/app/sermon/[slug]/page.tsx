@@ -2,6 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Bounce, toast } from 'react-toastify';
@@ -10,11 +11,12 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/dialog';
 import { Footer, Header } from '@/components/Layout';
 import Loader from '@/components/loader';
 
-import { homepagePodcasts } from '@/constant/config';
+import { sermonPageSermons } from '@/constant/config';
 import { fetchData } from '@/utils/fetch-api';
 
 interface Snippet {
   title: string;
+  description: any;
   thumbnails: {
     maxres?: {
       url: any;
@@ -29,41 +31,41 @@ interface Snippet {
   // Define other properties if needed
 }
 
-function findPodcastByLink(link: string) {
-  const podcast = homepagePodcasts.find((podcast) => podcast.link === link);
-  if (podcast) {
+function findSermonByLink(link: string) {
+  const sermon = sermonPageSermons.find((sermon) => sermon.link === link);
+  if (sermon) {
     const {
-      id: podcastId,
-      title: podcastTitle,
-      description: podcastDescription,
-      image: podcastImage,
-    } = podcast;
-    return { podcastId, podcastTitle, podcastDescription, podcastImage };
+      id: sermonId,
+      title: sermonTitle,
+      description: sermonDescription,
+      image: sermonImage,
+    } = sermon;
+    return { sermonId, sermonTitle, sermonDescription, sermonImage };
   } else {
     return {
-      podcastId: '',
-      podcastTitle: '',
-      podcastDescription: '',
-      podcastImage: '',
+      sermonId: '',
+      sermonTitle: '',
+      sermonDescription: '',
+      sermonImage: '',
     };
   }
 }
 
-export default function PodcastRoute({ params }: { params: { slug: string } }) {
+export default function SermonRoute({ params }: { params: { slug: string } }) {
   const [videos, setVideos] = useState<any>([]);
   const [nextPageToken, setNextPageToken] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { slug } = params;
 
-  const podcastLink = `/podcast/${slug}`;
+  const sermonLink = `/sermon/${slug}`;
 
-  const { podcastId, podcastTitle, podcastDescription, podcastImage } =
-    findPodcastByLink(podcastLink);
+  const { sermonId, sermonTitle, sermonDescription, sermonImage } =
+    findSermonByLink(sermonLink);
 
   const fetchVideos = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetchData(podcastId, nextPageToken);
+      const response = await fetchData(sermonId, nextPageToken);
 
       setVideos([...videos, ...response.items]);
       setNextPageToken(response.nextPageToken || ''); // Set empty string if no nextPageToken
@@ -94,7 +96,7 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
 
   //if (isLoading) return <Loader />;
 
-  // const data = await getPodcastBySlug(slug);
+  // const data = await getSermonBySlug(slug);
   if (videos.length === 0) return <Loader />;
 
   return (
@@ -116,25 +118,35 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
                 >
                   <Image
                     className='relative '
-                    src={podcastImage}
+                    src={sermonImage}
                     width='1984'
                     height='380'
-                    alt={podcastTitle}
+                    alt={sermonTitle}
                   />
                 </div>
                 <div className='my-8 md:my-16 text-base sm:text-lg md:text-xl max-w-2xl mx-auto'>
-                  <p>{podcastDescription}</p>
+                  <p>{sermonDescription}</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className='relative z-10 overflow-hidden bg-gray-200 text-black'>
+        <section className='relative z-10 overflow-hidden bg-black text-white'>
           <div className='wrapper relative z-20 animate-in effect-fade-in entered'>
-            <div className='pt-16 md:pt-24 pb-16 md:pb-24'>
+            <div className='pt-3 md:pt-0 pb-16 md:pb-24'>
               <div className='flex flex-wrap headline-defaults copy-defaults'>
+                <div className='w-full px-4 text-center'>
+                  <h2 className='mx-auto'>
+                    <span className='my-4 md:my-8'>Explore the Series</span>
+                  </h2>
+                  <div className='rich-text md:my-4 py-px text-lg max-w-4xl mx-auto'>
+                    <p>
+                      Check back here to see if there's any new content added.
+                    </p>
+                  </div>
+                </div>
                 <div className='load-more-wrapper no-request'>
-                  {/* podcasts */}
+                  {/* sermons */}
                   <div className='fade-hover-area'>
                     <div className='flex flex-wrap load-more-container resource-content'>
                       {videos.map(
@@ -142,6 +154,7 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
                           id,
                           snippet = {
                             title: '',
+                            description: '',
                             thumbnails: {
                               maxres: {
                                 url: '',
@@ -156,12 +169,28 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
                         }) => {
                           const {
                             title,
+                            description,
                             thumbnails = {},
                             resourceId = {
                               videoId: '',
                             },
                           } = snippet;
                           const { maxres } = thumbnails;
+
+                          // Calculate title, description, scripture and notes
+                          const desc = description.substring(
+                            0,
+                            description.indexOf('Series:')
+                          );
+                          const sp = description.split('Speaker:').pop();
+                          const speaker = sp?.split('Scripture')[0].trim();
+                          const scripture = description
+                            .split('Scripture:')[1]
+                            .split('Sermon')[0]
+                            .trim()
+                            .split('\n')[0]
+                            .trim();
+                          const notes = description.split('Notes:')[1].trim();
 
                           return (
                             <div
@@ -187,10 +216,26 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
                                     sizes='100vw'
                                   />
                                 </picture>
-                                <p className='subhead'>PODCAST</p>
+
                                 <h3>{title}</h3>
                                 <div className='max-w-2xl mb-4 md:text-lg'>
-                                  <p>{podcastDescription}</p>
+                                  <p className='subhead'>
+                                    Speaker : {speaker} <br /> Scripture :{' '}
+                                    {scripture} <br />
+                                    Notes :{' '}
+                                    {notes && (
+                                      <Link
+                                        download='notes'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        href={notes}
+                                        className='underline'
+                                      >
+                                        Download
+                                      </Link>
+                                    )}
+                                  </p>
+                                  <p>{desc}</p>
                                 </div>
                                 <div className='border-t border-gray-600 flex items-center mt-auto mb-0 py-2'>
                                   <VideoModal video={resourceId.videoId} />
