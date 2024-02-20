@@ -1085,6 +1085,11 @@ select {
   color: rgba(27, 225, 242, var(--tw-text-opacity));
 }
 
+.text-coral {
+  --tw-text-opacity: 1;
+  color: rgba(245, 109, 110, var(--tw-text-opacity));
+}
+
 .text-red {
   --tw-text-opacity: 1;
   color: rgba(255, 73, 92, var(--tw-text-opacity));
@@ -1105,9 +1110,19 @@ select {
   color: rgba(27, 225, 242, var(--tw-text-opacity));
 }
 
+.hover\:text-coral:hover {
+  --tw-text-opacity: 1;
+  color: rgba(245, 109, 110, var(--tw-text-opacity));
+}
+
 .hover\:text-cyan-dark:hover {
   --tw-text-opacity: 1;
   color: rgba(12, 195, 212, var(--tw-text-opacity));
+}
+
+.hover\:text-coral-dark:hover {
+  --tw-text-opacity: 1;
+  color: rgba(210, 76, 78, var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:underline {
@@ -3624,6 +3639,11 @@ ul {
   .xl\:hover\:text-cyan:hover {
     --tw-text-opacity: 1;
     color: rgba(27, 225, 242, var(--tw-text-opacity));
+  }
+
+  .xl\:hover\:text-coral:hover {
+    --tw-text-opacity: 1;
+    color: rgba(245, 109, 110, var(--tw-text-opacity));
   }
   .xl\:w-96 {
     width: 24rem;

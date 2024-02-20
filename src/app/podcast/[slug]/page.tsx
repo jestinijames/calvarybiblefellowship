@@ -9,6 +9,7 @@ import { Bounce, toast } from 'react-toastify';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/dialog';
 import { Footer, Header } from '@/components/Layout';
 import Loader from '@/components/loader';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 import { homepagePodcasts } from '@/constant/config';
 import { fetchData } from '@/utils/fetch-api';
@@ -63,7 +64,7 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
   const fetchVideos = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetchData(podcastId, nextPageToken);
+      const response = await fetchData(podcastId, 3, nextPageToken, '');
 
       setVideos([...videos, ...response.items]);
       setNextPageToken(response.nextPageToken || ''); // Set empty string if no nextPageToken
@@ -234,6 +235,7 @@ export default function PodcastRoute({ params }: { params: { slug: string } }) {
         </section>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

@@ -1,11 +1,17 @@
-export async function fetchData(playlistId: string, pageToken?: string) {
+export async function fetchData(
+  playlistId: string | undefined,
+  maxResults = 3,
+  pageToken?: string,
+  order = ''
+) {
   try {
     const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_TOKEN;
-    const maxResults = 3;
+
     const requestUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxResults}&key=${API_KEY}${
       pageToken ? `&pageToken=${pageToken}` : ''
-    }`;
-
+    }
+    ${order ? `&order=${order}` : ''}
+    `;
     const response = await fetch(requestUrl);
     const data = await response.json();
     return data;

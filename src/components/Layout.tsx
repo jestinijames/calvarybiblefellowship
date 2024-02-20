@@ -50,6 +50,72 @@ export function Header() {
                   />
                 </Link>
               </li>
+              <li className='block mx-4 my-0 xl:mx-2 xl:my-4'>
+                <Link
+                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-coral transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
+                    pathname === '/who-we-are' ? 'text-coral' : ''
+                  }  xl:font-bold`}
+                  href='/who-we-are'
+                >
+                  <span>Who We Are</span>
+                  <span className='ml-auto mr-4 group-hover:mr-2 transition-margin xl:hidden'>
+                    <svg
+                      className='w-4 h-4'
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 23.6 18.2'
+                    >
+                      <path
+                        fill='currentColor'
+                        d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
+                      ></path>
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+              <li className='block mx-4 my-0 xl:mx-2 xl:my-4'>
+                <Link
+                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-coral transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
+                    pathname === '/what-we-believe' ? 'text-coral' : ''
+                  }  xl:font-bold`}
+                  href='/what-we-believe'
+                >
+                  <span>What We Believe</span>
+                  <span className='ml-auto mr-4 group-hover:mr-2 transition-margin xl:hidden'>
+                    <svg
+                      className='w-4 h-4'
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 23.6 18.2'
+                    >
+                      <path
+                        fill='currentColor'
+                        d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
+                      ></path>
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+              <li className='block mx-4 my-0 xl:mx-2 xl:my-4'>
+                <Link
+                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-coral transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
+                    pathname === '/leadership' ? 'text-coral' : ''
+                  }  xl:font-bold`}
+                  href='/leadership'
+                >
+                  <span>Leadership</span>
+                  <span className='ml-auto mr-4 group-hover:mr-2 transition-margin xl:hidden'>
+                    <svg
+                      className='w-4 h-4'
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 23.6 18.2'
+                    >
+                      <path
+                        fill='currentColor'
+                        d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
+                      ></path>
+                    </svg>
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
           {/* Contact button */}
@@ -58,8 +124,8 @@ export function Header() {
               {/* Sermons Link */}
               <li className='block mx-4 my-0 xl:mx-2 xl:my-4'>
                 <a
-                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-[#f56d6e] transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
-                    pathname === '/sermons' ? 'text-[#f56d6e]' : ''
+                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-coral transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
+                    pathname === '/sermons' ? 'text-coral' : ''
                   } border-none mb-8 xl:mb-0`}
                   href='/sermons'
                 >
@@ -81,8 +147,8 @@ export function Header() {
               {/* Podcasts Link */}
               <li className='block mx-4 my-0 xl:mx-2 xl:my-4'>
                 <a
-                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-[#f56d6e] transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
-                    pathname === '/podcasts' ? 'text-[#f56d6e]' : ''
+                  className={`group px-0 pt-4 pb-3 flex items-center w-full font-sans font-regular border-b border-white border-opacity-40 xl:hover:text-coral transition-colors xl:inline xl:px-2 xl:py-0 xl:border-none ${
+                    pathname === '/podcasts' ? 'text-coral' : ''
                   } border-none mb-8 xl:mb-0`}
                   href='/podcasts'
                 >
@@ -119,6 +185,14 @@ export function Header() {
       <div className='mobile-nav block h-screen pointer-events-none xl:hidden'>
         <div className='mobile-nav-top-bar relative z-20'>
           <div className='bg-black text-white flex flex-wrap items-center justify-between px-4 py-3 sm:py-4 pointer-events-auto'>
+            {/* Hamburger menu */}
+            <div className='mobile-nav-toggle'>
+              <div className='hamburger'>
+                <span className='line'></span>
+                <span className='line'></span>
+                <span className='line'></span>
+              </div>
+            </div>
             <Link className='block no-child-pointers ml-2' href='/'>
               <Image
                 className='sb_logo'
@@ -146,12 +220,12 @@ export function Footer() {
           {/* Logo */}
           <div className='w-full xl:w-2/5 px-4'>
             <Image
-              src='/logos/CBF_WT_Black.png'
+              src='/logos/CBF_WT_Full_Coral.png'
               alt='bg'
               loading='eager'
               className='object-cover'
               height={200}
-              width={200}
+              width={400}
             />
           </div>
           {/* links */}

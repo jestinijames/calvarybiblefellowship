@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useMemo, useState } from 'react';
 
 import { Footer, Header } from '@/components/Layout';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/tabs';
 
 import { ourBeliefs, whatWeDoContent } from '@/constant/config';
@@ -54,6 +55,7 @@ export default function BeliefsPage() {
         <WhatWeDo />
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

@@ -5,11 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
-import { Bounce, toast } from 'react-toastify';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 
 import { Dialog, DialogContent, DialogTrigger } from '@/components/dialog';
 import { Footer, Header } from '@/components/Layout';
 import Loader from '@/components/loader';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 import { sermonPageSermons } from '@/constant/config';
 import { fetchData } from '@/utils/fetch-api';
@@ -65,7 +66,7 @@ export default function SermonRoute({ params }: { params: { slug: string } }) {
   const fetchVideos = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetchData(sermonId, nextPageToken);
+      const response = await fetchData(sermonId, 3, nextPageToken, '');
 
       setVideos([...videos, ...response.items]);
       setNextPageToken(response.nextPageToken || ''); // Set empty string if no nextPageToken
@@ -222,17 +223,19 @@ export default function SermonRoute({ params }: { params: { slug: string } }) {
                                   <p className='subhead'>
                                     Speaker : {speaker} <br /> Scripture :{' '}
                                     {scripture} <br />
-                                    Notes :{' '}
                                     {notes && (
-                                      <Link
-                                        download='notes'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        href={notes}
-                                        className='underline'
-                                      >
-                                        Download
-                                      </Link>
+                                      <>
+                                        Notes :{' '}
+                                        <Link
+                                          download='notes'
+                                          target='_blank'
+                                          rel='noopener noreferrer'
+                                          href={notes}
+                                          className='underline'
+                                        >
+                                          Download
+                                        </Link>
+                                      </>
                                     )}
                                   </p>
                                   <p>{desc}</p>
@@ -278,7 +281,9 @@ export default function SermonRoute({ params }: { params: { slug: string } }) {
           </div>
         </section>
       </main>
+      <ScrollToTopButton />
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

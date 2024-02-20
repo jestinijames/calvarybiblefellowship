@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Footer, Header } from '@/components/Layout';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 import {
   aboutMenuSection,
@@ -247,12 +248,12 @@ export default function HomePage() {
                       </p>
                     </div>
                     <p>
-                      <a
+                      <Link
                         className='btn items-center group '
-                        href='https://www.slalombuild.com/our-work/smith-optics'
+                        href='/sermons#latest-sermon'
                       >
                         <span>Check it out</span>
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </div>
@@ -459,6 +460,7 @@ export default function HomePage() {
       </main>
       {/* Footer */}
       <Footer />
+      <ScrollToTopButton />
       {/* Toaster */}
       <ToastContainer />
     </div>
