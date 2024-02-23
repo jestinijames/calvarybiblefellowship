@@ -3,6 +3,7 @@ export const siteConfig = {
   description: 'Salt And Light',
   url: 'https://cbf-church.org',
   email: 'reachout@cbf-church.org',
+  questions: 'Have Questions? Please reach us at',
 };
 
 export const homepageHero = {
@@ -12,6 +13,238 @@ export const homepageHero = {
     'To whoever will come - all who are spiritually weary; all who mourn, all who struggle, all who sin, all who are lonely - this church opens wide her doors and offers them welcome in the name of the Lord and Savior Jesus Christ',
   video: '/videos/hero.mp4',
 };
+
+export const sermonPageHero = {
+  header: 'Sermons',
+  title: 'Watch. Learn.',
+  subtitle: 'Apply.',
+  description:
+    'Welcome to our Sermons page, where you`ll find insightful teachings and inspiring messages to guide your spiritual journey and nourish your soul. Dive in today!',
+  image: '/images/sermons.jpg',
+  latestSermonTitle: 'Watch the latest Sermon',
+  latestSermonDescription:
+    'Join us for our latest Sunday Sermon, where we dive deep into the Word of God. Tune in for spiritual nourishment, uplifting messages, and a deeper understanding of biblical truths.',
+  sermonSeriesTitle: 'Sermon Series',
+  sermonSeriesDescription:
+    ' Delve into Our Sermon Series on Finding Meaning, Purpose,and Connection in Everyday Life.',
+  sermonAPITitle: 'Explore the Series',
+  sermonAPIDescription:
+    ' Check back here to see if there`s any new content added.',
+};
+
+export const podcastPageHero = {
+  header: 'Podcasts',
+  title: 'Listen. Learn.',
+  subtitle: 'Apply.',
+  description:
+    'Welcome to our Podcast page, your gateway to captivating conversations and thought-provoking discussions. Tune in for insightful insights and inspiring stories, enriching your mind and fueling your curiosity. Start exploring today!',
+  image: '/images/podcasts.jpg',
+  podcastSeriesTitle: 'Podcast Series',
+  podcastSeriesDescription:
+    'Engage and Enlighten: Tune into Our Podcast Series for Insightful Conversations on Faith, Life, and Community Connections.',
+  podcastAPITitle: 'Explore the Series',
+  podcastAPIDescription:
+    ' Check back here to see if there`s any new content added.',
+};
+
+export const whoWeAreHero = {
+  header: 'Who We Are',
+  title: 'Our',
+  subtitle: 'Story.',
+  description:
+    'Calvary Bible Fellowship was started by a few like-minded families who wanted to build a space for young people to follow Jesus, serve their city, and invite others to do the same.',
+  image: '/images/aboutus.jpg',
+  timelineHeader: 'Our Church Timeline',
+  timelineDescription:
+    'Our church has evolved significantly since 2002, with growth in membership, community engagement, and technological integration. Today, we stand as a beacon of faith and service, guided by our enduring commitment to spiritual growth and social impact.',
+};
+
+export const whatWeBelieveHero = {
+  header: 'What We Believe',
+  title: 'Our Core',
+  subtitle: 'Beliefs.',
+  description:
+    'We are a gospel-centered community that celebrates the life, death, resurrection and teachings of Jesus.',
+  image: '/images/what.jpg',
+  whatWeDoTitle: 'What We Do',
+  whatWeDoDescription:
+    'We are committed to being a family made up of different generations, backgrounds, ethnicities and abilities. Unity in the midst of diversity is a big part of God`s Kingdom, and one we celebrate.',
+  whatWeBelieveTitle: 'Mission Statement',
+  whatWeBelieveDescription:
+    'This is our mission statement from when Calvary Bible Fellowship was formed. It still represents what we think matters most.',
+};
+
+export const leadershipPageHero = {
+  header: 'Leadership',
+  title: 'Meet Our',
+  subtitle: 'Leaders.',
+  description:
+    'Welcome to our church leadership page. Here, you`ll find a dedicated team committed to serving our congregation, fostering spiritual growth, and supporting our community. Join us!',
+  image: '/images/leadership.jpg',
+  eldersTitle: 'Meet Our Elders',
+  eldersDescription:
+    'Elders oversee the life, teaching, and mission of Calvary Bible Fellowship, and work to keep everything we do focused on our vision to be the church and reach the city.',
+  deaconsTitle: 'Meet Our Deacons',
+  deaconsDescription:
+    'Deacons use their gifts to serve the Elders by providing  perspective, wisdom and counsel, and encouragement on church-wide theological or strategic matters',
+};
+
+export const leadershipElders = [
+  {
+    name: 'Revanth T',
+    title: 'ELDER',
+    bio: 'Revanth came to know the Lord when he was 10 years old. Ever since, he has always desired to know the Lord more and make Him known. After a brief stint in the IT industry, he answered God’s call to step into full-time ministry. He is passionate about preaching, teaching God`s Word and theology. His vision is to equip churches by training Christians to study and teach the Word effectively. He also enjoys one-on-one conversation about Christian life. Revanth and his wife Angela have two boys, Asher and Zacharias. Their home is open for people to share good food and conversations about life, faith and cricket.',
+    image: '/images/revanth.jpg',
+  },
+  {
+    name: 'Charles Mathew',
+    title: 'ELDER',
+    bio: 'Charlie has been with Calvary Bible Fellowship since its inception. Along with his secular profession as a technology marketeer, he is involved in teaching and personally encouraging individuals to emulate Christ. He is particularly passionate about Biblical history and how God’s plan of salvation for mankind has been orchestrated through the ages. His other interests include people, places, cultures, music and football. A dad of two boys, he has been married to his wife Deema since 2005.',
+    image: '/images/charles.jpg',
+  },
+  {
+    name: 'Pradeep Daniel',
+    title: 'ELDER',
+    bio: 'Pradeep grew up in Chennai and has been part of Calvary Bible Fellowship from its start. He serves through church administration, service, group studies and by connecting with people one-on-one. He is an automobile enthusiast, which has opened many doors for him to reach out to young people. Serving the church and the Lord`s people behind the scenes gives him the greatest joy. He is married to Litty and the father of two boys. As a family, they desire to bless the church through their lives and home.',
+    image: '/images/pradeep.jpg',
+  },
+  {
+    name: 'Benjamin Mathew',
+    title: 'ELDER',
+    bio: 'Benjamin (Benji) was born in the UAE and came to know Christ during the first Gulf War. After a brief corporate stint, he felt the Lord`s leading to step into missions. He loves connecting with people from different cultures and seeing how the gospel breaks through all barriers. He has a burden for Bible translation, desiring to see God`s Word available to all people groups. He finds missions exciting and adventurous, and loves studying how creation, history and archaeology concur with Scripture. Benji enjoys sports, good jokes, unique cuisines, coffee and meaningful conversation. He and his wife, Preethi, have the joy of raising four daughters and desire to build a discipleship-centric home.',
+    image: '/images/benjamin.jpg',
+  },
+];
+
+export const leadershipDeacons = [
+  {
+    name: 'John Paul',
+    title: 'DEACON',
+    image: '/images/john.jpg',
+  },
+  {
+    name: 'Jaison George',
+    title: 'DEACON',
+    image: '/images/jaison.jpg',
+  },
+  {
+    name: 'Siji George',
+    title: 'DEACON',
+    image: '/images/siji.jpg',
+  },
+  {
+    name: 'Job Sam Koshy',
+    title: 'DEACON',
+    image: '/images/job.jpg',
+  },
+  {
+    name: 'Pisty Phil Mathew',
+    title: 'DEACON',
+    image: '/images/pisty.jpg',
+  },
+  {
+    name: 'Kishor Hegde',
+    title: 'DEACON',
+    image: '/images/kishor.jpg',
+  },
+  {
+    name: 'Prithvi G',
+    title: 'DEACON',
+    image: '/images/prithvi.jpg',
+  },
+];
+
+export const contactUsContent = {
+  header: 'Contact Us',
+  title: 'Connect With',
+  subtitle: 'Us.',
+  description:
+    'Our Contact Us page is a dedicated platform for users to reach out and connect with us. Whether you have questions, feedback, or need support, we`re here to listen and assist you.',
+  image: '/images/contact.jpg',
+  location: 'https://maps.app.goo.gl/sLkPBuLvFUi3DKVv6',
+  addressHeading: 'Sunday Gathering Location',
+  addressTitle: 'World Cassette Outreach Of India (WCOI)',
+  address:
+    ' 90, Osborne Rd, near Lake Side Hospital, Hermit Colony, Sivanchetti Gardens, Bengaluru, Karnataka 560042',
+  addressImage: '/images/map.jpg',
+};
+
+export const NotFoundContent = {
+  title: 'Page Not Found',
+  description:
+    'The page you requested does not exist, or there may have been an error. Please check the URL or contact support if you believe this is an error.',
+  link: 'Go Home',
+};
+
+export const otherPages = [
+  {
+    title: 'Who We Are',
+    desc: 'Where We Started: Learning about our origin.',
+    link: '/who-we-are',
+  },
+  {
+    title: 'What We Believe',
+    desc: 'Our Core Beliefs: Understanding Our Faith.',
+    link: '/what-we-believe',
+  },
+  {
+    title: 'Leadership',
+    desc: 'Get to know the leadership.',
+    link: '/leadership',
+  },
+  {
+    title: 'More Sermons?',
+    desc: 'Discover transformative sermons for spiritual growth.',
+    link: '/sermons',
+  },
+  {
+    title: 'More Podcasts?',
+    desc: 'Discover transformative podcasts for spiritual growth.',
+    link: '/podcasts',
+  },
+];
+
+export const footerQuickLinks = [
+  {
+    title: 'Be Transformed',
+    link: '/sermon/be-transformed',
+  },
+  {
+    title: 'Marks of A Healthy Church',
+    link: '/sermon/marks-of-a-healthy-church',
+  },
+  {
+    title: 'Living With Hope in Light of His Coming',
+    link: '/sermon/living-with-hope-in-light-of-his-coming',
+  },
+  {
+    title: 'Abide In Christ',
+    link: '/sermon/abide-in-christ',
+  },
+  {
+    title: 'Victory In Christ',
+    link: '/sermon/victory-in-christ',
+  },
+];
+
+export const footerAboutLinks = [
+  {
+    title: 'Who We Are',
+    link: '/who-we-are',
+  },
+  {
+    title: 'What We Believe',
+    link: '/what-we-believe',
+  },
+  {
+    title: 'Leadership',
+    link: '/leadership',
+  },
+  {
+    title: 'Care Groups',
+    link: '/care-groups',
+  },
+];
 
 export const homepagePodcasts = [
   {
@@ -487,5 +720,86 @@ export const ourBeliefs = [
       </p>
     ),
     video: '/videos/return.mp4',
+  },
+];
+
+export const timelineItems = [
+  {
+    title: '2001',
+    cardTitle: 'The Vision',
+    media: {
+      name: 'vision',
+      source: {
+        url: '/images/vision.jpg',
+      },
+      type: 'IMAGE',
+    },
+
+    cardDetailedText: `Our story began when a few believers were burdened for professionals and students coming to Bangalore who needed a church where they felt comfortable, a gathering open to those seeking answers regarding their faith, and where they felt secure bringing their friends.`,
+  },
+  {
+    title: '2002',
+    cardTitle: 'The First Step',
+    media: {
+      name: 'first-step',
+      source: {
+        url: '/images/second-step.jpg',
+      },
+      type: 'IMAGE',
+    },
+
+    cardDetailedText: `With this vision in mind, these believers began gathering in the aerobics room of a gym in Domlur on Airport Road. Eventually as the gathering grew, they named the church, appropriately, 'Airport Road Fellowship'. As the new church grew in the Lord and in numbers, God provided for their every need and blessed the young group.`,
+  },
+  {
+    title: '2009',
+    cardTitle: 'A Move And A New Name',
+    media: {
+      name: 'second-step',
+      source: {
+        url: '/images/third-step.jpg',
+      },
+      type: 'IMAGE',
+    },
+
+    cardDetailedText: `By April 2009, Airport Road Fellowship had outgrown the gymnasium. With extraordinary timing, the Ashirvad auditorium in St. Joseph’s Jesuit Seminary on St. Mark’s Road became available and the church moved their meetings there. With the name “Airport Road Fellowship” now out of date, the church was renamed 'Calvary Bible Fellowship' (CBF).`,
+  },
+  {
+    title: '2017',
+    cardTitle: 'And Another Move!',
+    media: {
+      name: 'third-step',
+      source: {
+        url: '/images/wcoi-step.jpg',
+      },
+      type: 'IMAGE',
+    },
+
+    cardDetailedText: `Eventually, CBF was blessed with more members and moved to WCOI on Osborne Road.`,
+  },
+  {
+    title: '2022',
+    cardTitle: 'Church Plant',
+    media: {
+      name: 'plant',
+      source: {
+        url: '/images/plant.jpg',
+      },
+      type: 'IMAGE',
+    },
+
+    cardDetailedText: `In 2022, the church had significantly grown in numbers. To meet the discipleship needs of it's members and to serve college-going students, Calvary Bible Fellowship prayerfully planted Grace Bible Fellowship within Christ University's Koramangala campus.`,
+  },
+  {
+    title: '2024',
+    cardTitle: 'Today',
+    media: {
+      name: 'fourth-step',
+      source: {
+        url: '/images/fourth-step.jpg',
+      },
+      type: 'IMAGE',
+    },
+
+    cardDetailedText: `Today, CBF is a growing and diverse congregation of all ages and backgrounds. In addition to Sunday worship meetings at WCOI, CBF conducts regular Bible studies, prayer meetings and a number of care cells throughout the week to help believers grow spiritually and build deep and lasting relationships with each other. The church is also involved with missions and social outreach in Bangalore and across India. The members of CBF continue to support the mission of the church as God adds chapter after chapter to our continuing story.`,
   },
 ];

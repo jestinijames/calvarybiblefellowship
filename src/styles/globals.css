@@ -336,14 +336,19 @@ select {
   background-color: rgba(97, 97, 97, var(--tw-bg-opacity));
 }
 
-.bg-navy {
+.bg-dye {
   --tw-bg-opacity: 1;
-  background-color: rgba(22, 61, 79, var(--tw-bg-opacity));
+  background-color: rgba(33, 61, 96, var(--tw-bg-opacity));
 }
 
 .bg-cyan {
   --tw-bg-opacity: 1;
-  background-color: rgba(27, 225, 242, var(--tw-bg-opacity));
+  background-color: rgba(245, 109, 110, var(--tw-bg-opacity));
+}
+
+.bg-coral {
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 109, 110, var(--tw-text-opacity));
 }
 
 .bg-red {
@@ -358,7 +363,12 @@ select {
 
 .hover\:bg-cyan:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(27, 225, 242, var(--tw-bg-opacity));
+  background-color: rgba(245, 109, 110, var(--tw-bg-opacity));
+}
+
+.hover\:bg-coral:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 109, 110, var(--tw-text-opacity));
 }
 
 .bg-opacity-75 {
@@ -1082,7 +1092,7 @@ select {
 
 .text-cyan {
   --tw-text-opacity: 1;
-  color: rgba(27, 225, 242, var(--tw-text-opacity));
+  color: rgba(245, 109, 110, var(--tw-text-opacity));
 }
 
 .text-coral {
@@ -1107,7 +1117,7 @@ select {
 
 .hover\:text-cyan:hover {
   --tw-text-opacity: 1;
-  color: rgba(27, 225, 242, var(--tw-text-opacity));
+  color: rgba(245, 109, 110, var(--tw-text-opacity));
 }
 
 .hover\:text-coral:hover {
@@ -1578,7 +1588,7 @@ select {
 
 ::selection {
   --tw-bg-opacity: 1;
-  background-color: rgba(27, 225, 242, var(--tw-bg-opacity));
+  background-color: rgba(245, 109, 110, var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgba(9, 9, 28, var(--tw-text-opacity));
 }
@@ -2083,7 +2093,7 @@ ul {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
     var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(27, 225, 242, var(--tw-ring-opacity));
+  --tw-ring-color: rgba(245, 109, 110, var(--tw-ring-opacity));
 }
 
 .form-defaults input,
@@ -2205,7 +2215,7 @@ ul {
 }
 
 .sb_logo .sb_logo_build {
-  fill: #1be1f2;
+  fill: #f56d6e;
 }
 
 .light-hero .main-header .desktop-nav,
@@ -2826,7 +2836,7 @@ ul {
   padding: 1rem;
   position: absolute;
   --tw-text-opacity: 1;
-  color: rgba(27, 225, 242, var(--tw-text-opacity));
+  color: rgba(245, 109, 110, var(--tw-text-opacity));
   white-space: nowrap;
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -3638,7 +3648,7 @@ ul {
   }
   .xl\:hover\:text-cyan:hover {
     --tw-text-opacity: 1;
-    color: rgba(27, 225, 242, var(--tw-text-opacity));
+    color: rgba(245, 109, 110, var(--tw-text-opacity));
   }
 
   .xl\:hover\:text-coral:hover {

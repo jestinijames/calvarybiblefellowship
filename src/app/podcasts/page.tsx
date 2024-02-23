@@ -2,11 +2,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
-import { Footer, Header } from '@/components/Layout';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { homepagePodcasts } from '@/constant/config';
+import { Footer } from '@/components/layout/footer';
+import { Header } from '@/components/layout/header';
+import { HeroHeading } from '@/components/layout/hero-heading';
+import { OtherPages } from '@/components/layout/other-pages';
+import { SubHeading } from '@/components/layout/sub-heading';
+import ScrollToTopButton from '@/components/ui/scroll-to-top-button';
+
+import {
+  homepagePodcasts,
+  otherPages,
+  podcastPageHero,
+} from '@/constant/config';
 
 export default function PodcastPage() {
   const [visibleItems, setVisibleItems] = useState(2);
@@ -20,60 +31,19 @@ export default function PodcastPage() {
       <Header />
       <main role='main' className='main relative z-10'>
         {/* Heading Section */}
+        <HeroHeading data={podcastPageHero} />
 
-        <section className='relative flex items-center pt-8 md:pt-16'>
-          <div className='wrapper py-12 md:py-24 lg:py-32'>
-            <div className='flex flex-wrap copy-defaults relative '>
-              <div className='w-full md:w-3/4 xl:w-1/2 px-4 z-20 headline-defaults copy-defaults relative md:absolute md:vertical-center '>
-                <p className='subhead'>Podcasts</p>
-                <h1 className=''>
-                  Listen. Learn.
-                  <br />
-                  Apply.
-                </h1>
-                <div className='my-8 text-xl  max-w-lg'>
-                  <p>
-                    Welcome to our Podcast page, your gateway to captivating
-                    conversations and thought-provoking discussions. Tune in for
-                    insightful insights and inspiring stories, enriching your
-                    mind and fueling your curiosity. Start exploring today!
-                  </p>
-                </div>
-              </div>
-              <div
-                className='relative z-10 w-full md:w-3/4 ml-auto mr-0 md:mr-4 rellax rellax-reverse'
-                style={{ transform: 'translate3d(0px, -33px, 0px)' }}
-              >
-                <Image
-                  className='relative lazyloaded'
-                  width='1300'
-                  height='745'
-                  alt='Woman in black flowered shirt smiling at camera, cyan diagonal bar over her left shoulder.'
-                  src='/images/podcasts.jpg'
-                  data-srcset=''
-                  sizes='100vw'
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Sub-Heading */}
+        <SubHeading
+          title={podcastPageHero.podcastSeriesTitle}
+          description={podcastPageHero.podcastSeriesDescription}
+          color='black'
+        />
+
         <section className='relative z-10 overflow-hidden bg-black text-white'>
           <div className='wrapper relative z-20 animate-in effect-fade-in entered'>
             <div className='pt-3 md:pt-0 pb-16 md:pb-24'>
               <div className='flex flex-wrap headline-defaults copy-defaults'>
-                {/* title */}
-                <div className='w-full px-4 text-center'>
-                  <h2 className='mx-auto'>
-                    <span className='my-4 md:my-8'>Podcast Series</span>
-                  </h2>
-                  <div className='rich-text md:my-4 py-px text-lg max-w-4xl mx-auto'>
-                    <p>
-                      "Engage and Enlighten: Tune into Our Podcast Series for
-                      Insightful Conversations on Faith, Life, and Community
-                      Connections."
-                    </p>
-                  </div>
-                </div>
                 {/* list */}
                 <div className='load-more-wrapper no-request'>
                   {/* podcasts list */}
@@ -90,21 +60,15 @@ export default function PodcastPage() {
                               className='group w-full h-full flex flex-col headline-defaults copy-defaults fade-hover-area-trigger'
                               href={podcast.link}
                             >
-                              <picture>
-                                <source
-                                  type='image/webp'
-                                  src={podcast.image}
-                                  data-sizes='100vw'
-                                />
-                                <Image
-                                  className='w-full mb-6 ls-is-cached lazyloaded'
-                                  width='1600'
-                                  height='960'
-                                  alt={podcast.title}
-                                  src={podcast.image}
-                                  sizes='100vw'
-                                />
-                              </picture>
+                              <Image
+                                className='w-full mb-6 ls-is-cached lazyloaded'
+                                width='1600'
+                                height='960'
+                                alt={podcast.title}
+                                src={podcast.image}
+                                sizes='100vw'
+                              />
+
                               <h3>{podcast.title}</h3>
                               <div className='max-w-2xl mb-4 md:text-lg'>
                                 <p>{podcast.description}</p>
@@ -150,64 +114,12 @@ export default function PodcastPage() {
           </div>
         </section>
 
-        {/* Other section links */}
-        <section className='relative z-10 bg-black text-white'>
-          <div className='wrapper relative z-20 '>
-            <div className='pt-16 md:pt-36 pb-16 md:pb-36'>
-              <div className='flex flex-wrap px-2'>
-                <div className='w-full md:w-1/2 px-2 my-2'>
-                  <a
-                    className='group flex flex-col h-full px-12 py-6 headline-defaults copy-defaults transition-colors no-child-pointers bg-navy text-white hover:bg-white hover:text-black'
-                    href='/who-we-are'
-                  >
-                    <p className='subhead'>EXPLORE</p>
-                    <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>
-                      Who we are
-                    </h3>
-                    <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                      <svg
-                        className='w-6 h-6'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 23.6 18.2'
-                      >
-                        <path
-                          fill='currentColor'
-                          d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div className='w-full md:w-1/2 px-2 my-2'>
-                  <a
-                    className='group flex flex-col h-full px-12 py-6 headline-defaults copy-defaults transition-colors no-child-pointers bg-[#f56d6e] text-black hover:bg-white'
-                    href='/what-we-believe'
-                  >
-                    <p className='subhead'>LEARN</p>
-                    <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>
-                      What we believe
-                    </h3>
-                    <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                      <svg
-                        className='w-6 h-6'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 23.6 18.2'
-                      >
-                        <path
-                          fill='currentColor'
-                          d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Other pages links */}
+        <OtherPages data1={otherPages[2]} data2={otherPages[0]} />
       </main>
       <Footer />
       <ScrollToTopButton />
+      <ToastContainer />
     </div>
   );
 }

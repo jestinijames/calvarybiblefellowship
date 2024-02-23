@@ -7,14 +7,17 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Footer, Header } from '@/components/Layout';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
+import { Footer } from '@/components/layout/footer';
+import { Header } from '@/components/layout/header';
+import { OtherPages } from '@/components/layout/other-pages';
+import ScrollToTopButton from '@/components/ui/scroll-to-top-button';
 
 import {
   aboutMenuSection,
   connectMenuSection,
   homepageHero,
   homepagePodcasts,
+  otherPages,
 } from '@/constant/config';
 
 export default function HomePage() {
@@ -278,20 +281,13 @@ export default function HomePage() {
         {/* Sunday Gathering Location */}
         <section className='relative z-10 overflow-hidden bg-black text-white'>
           <div className='absolute z-10 w-full h-full top-0 left-0'>
-            <picture>
-              <source
-                type='image/webp'
-                data-sizes='100vw'
-                src='images/chair.jpg'
-              />
-              <Image
-                className='absolute top-0 left-0 w-full h-full object-cover ls-is-cached lazyloaded'
-                width='3840'
-                height='1560'
-                alt='Image of Asset intelligent products home feature 01'
-                src='/images/chair.jpg'
-              />
-            </picture>
+            <Image
+              className='absolute top-0 left-0 w-full h-full object-cover ls-is-cached lazyloaded'
+              width='3840'
+              height='1560'
+              alt='Image of Asset intelligent products home feature 01'
+              src='/images/chair.jpg'
+            />
           </div>
           <div className='wrapper relative z-20 animate-in effect-fade-in entered'>
             <div className='pt-16 md:pt-24 pb-16 md:pb-24'>
@@ -360,21 +356,15 @@ export default function HomePage() {
                               href={podcast.link}
                               className='group w-full h-full flex flex-col headline-defaults copy-defaults fade-hover-area-trigger'
                             >
-                              <picture>
-                                <source
-                                  type='image/webp'
-                                  data-sizes='100vw'
-                                  src={podcast.image}
-                                />
-                                <Image
-                                  className='w-full mb-6 ls-is-cached lazyloaded'
-                                  width='1200'
-                                  height='750'
-                                  alt='Open whitepaper book, with cover How to Eat an Airplane.'
-                                  src={podcast.image}
-                                  sizes='100vw'
-                                />
-                              </picture>
+                              <Image
+                                className='w-full mb-6 ls-is-cached lazyloaded'
+                                width='1200'
+                                height='750'
+                                alt='Open whitepaper book, with cover How to Eat an Airplane.'
+                                src={podcast.image}
+                                sizes='100vw'
+                              />
+
                               <p className='subhead'>Podcast</p>
                               <h3>{podcast.title}</h3>
                               <div className='max-w-2xl mb-4 md:text-lg'>
@@ -407,61 +397,12 @@ export default function HomePage() {
           </div>
         </section>
         {/* Sermons and Podcasts Home */}
-        <section className='relative z-10 bg-black text-white'>
-          <div className='wrapper relative z-20 animate-in effect-fade-in entered'>
-            <div className='pt-16 md:pt-36 pb-16 md:pb-36'>
-              <div className='flex flex-wrap px-2'>
-                <div className='w-full md:w-1/2 px-2 my-2'>
-                  <a
-                    className='group flex flex-col h-full px-12 py-6 headline-defaults copy-defaults transition-colors no-child-pointers bg-[#f56d6e] text-black hover:bg-white'
-                    href='/sermons'
-                  >
-                    <p className='subhead'>EXPLORE</p>
-                    <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>Sermons</h3>
-                    <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                      <svg
-                        className='w-6 h-6'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 23.6 18.2'
-                      >
-                        <path
-                          fill='currentColor'
-                          d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div className='w-full md:w-1/2 px-2 my-2'>
-                  <a
-                    className='group flex flex-col h-full px-12 py-6 headline-defaults copy-defaults transition-colors no-child-pointers bg-gray-400 text-black hover:bg-white'
-                    href='/podcasts'
-                  >
-                    <p className='subhead'>EXPLORE</p>
-                    <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>Podcasts</h3>
-                    <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                      <svg
-                        className='w-6 h-6'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 23.6 18.2'
-                      >
-                        <path
-                          fill='currentColor'
-                          d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Other pages links */}
+        <OtherPages data1={otherPages[3]} data2={otherPages[4]} />
       </main>
-      {/* Footer */}
-      <Footer />
+
       <ScrollToTopButton />
-      {/* Toaster */}
+      <Footer />
       <ToastContainer />
     </div>
   );

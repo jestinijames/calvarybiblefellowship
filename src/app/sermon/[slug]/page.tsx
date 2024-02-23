@@ -4,15 +4,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
-import ReactPlayer from 'react-player';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 
-import { Dialog, DialogContent, DialogTrigger } from '@/components/dialog';
-import { Footer, Header } from '@/components/Layout';
-import Loader from '@/components/loader';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { sermonPageSermons } from '@/constant/config';
+import { Footer } from '@/components/layout/footer';
+import { Header } from '@/components/layout/header';
+import { AlternateHeroHeading } from '@/components/layout/hero-heading';
+import { OtherPages } from '@/components/layout/other-pages';
+import { SubHeading } from '@/components/layout/sub-heading';
+import Loader from '@/components/ui/loader';
+import ScrollToTopButton from '@/components/ui/scroll-to-top-button';
+import { VideoModal } from '@/components/ui/video-modal';
+
+import {
+  otherPages,
+  sermonPageHero,
+  sermonPageSermons,
+} from '@/constant/config';
 import { fetchData } from '@/utils/fetch-api';
 
 interface Snippet {
@@ -105,47 +114,24 @@ export default function SermonRoute({ params }: { params: { slug: string } }) {
       <Header />
       <main role='main' className='main relative z-10'>
         {/* Header */}
-        <section className='relative flex items-center pt-8 md:pt-16'>
-          <div className='wrapper py-12 md:py-24 lg:py-32'>
-            <div className='flex flex-wrap copy-defaults relative '>
-              <div className='w-full px-4 headline-defaults copy-defaults text-center'>
-                {/* Image */}
-                <div
-                  className='relative z-10 w-full md:w-3/4 my-8 rellax rellax-reverse mx-auto'
-                  style={{
-                    transform:
-                      'translate3d(0px, 0px, 0px) translate3d(0px, 0px, 0px)',
-                  }}
-                >
-                  <Image
-                    className='relative '
-                    src={sermonImage}
-                    width='1984'
-                    height='380'
-                    alt={sermonTitle}
-                  />
-                </div>
-                <div className='my-8 md:my-16 text-base sm:text-lg md:text-xl max-w-2xl mx-auto'>
-                  <p>{sermonDescription}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AlternateHeroHeading
+          data={{
+            title: sermonTitle,
+            description: sermonDescription,
+            image: sermonImage,
+          }}
+        />
+
+        {/* Sub-Heading */}
+        <SubHeading
+          title={sermonPageHero.sermonAPITitle}
+          description={sermonPageHero.sermonAPIDescription}
+          color='black'
+        />
         <section className='relative z-10 overflow-hidden bg-black text-white'>
           <div className='wrapper relative z-20 animate-in effect-fade-in entered'>
             <div className='pt-3 md:pt-0 pb-16 md:pb-24'>
               <div className='flex flex-wrap headline-defaults copy-defaults'>
-                <div className='w-full px-4 text-center'>
-                  <h2 className='mx-auto'>
-                    <span className='my-4 md:my-8'>Explore the Series</span>
-                  </h2>
-                  <div className='rich-text md:my-4 py-px text-lg max-w-4xl mx-auto'>
-                    <p>
-                      Check back here to see if there's any new content added.
-                    </p>
-                  </div>
-                </div>
                 <div className='load-more-wrapper no-request'>
                   {/* sermons */}
                   <div className='fade-hover-area'>
@@ -202,21 +188,14 @@ export default function SermonRoute({ params }: { params: { slug: string } }) {
                                 className='group w-full h-full flex flex-col headline-defaults copy-defaults fade-hover-area-trigger'
                                 //href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
                               >
-                                <picture>
-                                  <source
-                                    type='image/webp'
-                                    src={maxres?.url}
-                                    data-sizes='100vw'
-                                  />
-                                  <Image
-                                    className='w-full mb-6 ls-is-cached lazyloaded'
-                                    width='1200'
-                                    height='750'
-                                    alt={title}
-                                    src={maxres?.url}
-                                    sizes='100vw'
-                                  />
-                                </picture>
+                                <Image
+                                  className='w-full mb-6 ls-is-cached lazyloaded'
+                                  width='1200'
+                                  height='750'
+                                  alt={title}
+                                  src={maxres?.url}
+                                  sizes='100vw'
+                                />
 
                                 <h3>{title}</h3>
                                 <div className='max-w-2xl mb-4 md:text-lg'>
@@ -280,27 +259,12 @@ export default function SermonRoute({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </section>
+        {/* Other pages links */}
+        <OtherPages data1={otherPages[3]} data2={otherPages[4]} />
       </main>
       <ScrollToTopButton />
       <Footer />
       <ToastContainer />
     </div>
-  );
-}
-
-function VideoModal({ video }: { video: string }) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <span className='font-sans font-bold cursor-pointer'>Listen now</span>
-      </DialogTrigger>
-      <DialogContent className='ata-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full max-h-96 max-w-screen-md w-full translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-slate-300 p-[5px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none'>
-        <ReactPlayer
-          width='100%'
-          height='100%'
-          url={`https://www.youtube.com/watch?v=${video}`}
-        />
-      </DialogContent>
-    </Dialog>
   );
 }
