@@ -1,14 +1,17 @@
+'use client';
 import { useEffect, useState } from 'react';
 
 export function useMediaQuery() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleWindowSizeChange);
+    }
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange);
     };
@@ -19,7 +22,9 @@ export function useMediaQuery() {
   };
 
   useEffect(() => {
-    window.addEventListener('orientationchange', handleOrientationChange);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('orientationchange', handleOrientationChange);
+    }
     return () => {
       window.removeEventListener('orientationchange', handleOrientationChange);
     };

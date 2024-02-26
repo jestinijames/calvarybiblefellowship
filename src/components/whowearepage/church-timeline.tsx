@@ -1,8 +1,7 @@
-import { Chrono } from 'react-chrono';
-
 import { SubHeading } from '@/components/layout/sub-heading';
 
 import { timelineItems, whoWeAreHero } from '@/constant/config';
+import { Chrono } from '@/utils/react-chrono-client';
 
 export function ChurchTimeline() {
   return (
