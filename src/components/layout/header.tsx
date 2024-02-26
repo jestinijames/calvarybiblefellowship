@@ -2,9 +2,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { Dispatch, useEffect, useState } from 'react';
 
-export function Header() {
+import { contactUsContent } from '@/constant/config';
+
+export function Header({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -24,10 +32,6 @@ export function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  // Mobile Menu Toggle functionality
-  // State of our Menu
-  const [isOpen, setIsOpen] = useState(false);
 
   // State of our button
   const [disabled, setDisabled] = useState(false);
@@ -141,7 +145,7 @@ export function Header() {
               </li>
             </ul>
           </div>
-          {/* Contact button */}
+
           <div className='ml-auto mr-8'>
             <ul className='flex flex-wrap flex-col xl:flex-row xl:items-center list-none pl-0 my-0'>
               {/* Sermons Link */}
@@ -366,9 +370,9 @@ export function Header() {
                 <p>
                   <Link
                     className='btn items-center group -my-4 btn-nav-contact'
-                    href='/contact-us'
+                    href={contactUsContent.location}
                   >
-                    <span>Contact</span>
+                    <span>Visit us</span>
                   </Link>
                 </p>
               </li>

@@ -1,3 +1,9 @@
+import Link from 'next/link';
+
+import Apple from '~/svg/Apple.svg';
+import Spotify from '~/svg/Spotify.svg';
+import Youtube from '~/svg/Youtube.svg';
+
 export const siteConfig = {
   title: 'Calvary Bible Fellowship',
   description: 'Salt And Light',
@@ -12,6 +18,32 @@ export const homepageHero = {
   description:
     'To whoever will come - all who are spiritually weary; all who mourn, all who struggle, all who sin, all who are lonely - this church opens wide her doors and offers them welcome in the name of the Lord and Savior Jesus Christ',
   video: '/videos/hero.mp4',
+};
+
+export const homepageLatestSermon = {
+  title: 'Watch the latest sermon',
+  subtitle: 'Check it out',
+  description:
+    'Dive into our latest sermon experience. Watch below and explore more series on our YouTube channel. Join us on this spiritual journey of faith and inspiration.',
+  link: '/sermons#latest-sermon',
+};
+
+export const homepageChurchLocation = {
+  title: 'Sunday Gathering Location',
+  subtitle: 'Join us every Sunday at 8:45 AM IST',
+  description:
+    ' World Cassette Outreach of India (WCOI)90, Osborne Rd, near Lake Side Hospital, Hermit Colony, Sivanchetti Gardens, Bengaluru, Karnataka 560042',
+  link: '/contact-us',
+  image: '/images/chair.jpg',
+  linkText: 'Learn more',
+};
+
+export const homepageTrendingPodcasts = {
+  title: 'Trending Podcasts',
+  subtitle1: 'PODCAST',
+  subtitle2: 'Explore',
+  description:
+    ' Explore our trending podcast series! Click on any to listen and dive into captivating stories, insightful discussions, and engaging content.',
 };
 
 export const sermonPageHero = {
@@ -72,6 +104,9 @@ export const whatWeBelieveHero = {
   whatWeBelieveTitle: 'Mission Statement',
   whatWeBelieveDescription:
     'This is our mission statement from when Calvary Bible Fellowship was formed. It still represents what we think matters most.',
+  careGroupTitle: 'Care Group Schedule',
+  careGroupDescription:
+    'Care groups provide a sense of family, deepen prayer life, offer support in crisis, facilitate sharing the faith, develop leadership, and enhance worship, aligning with the New Testament model of Christian community.',
 };
 
 export const leadershipPageHero = {
@@ -138,7 +173,7 @@ export const leadershipDeacons = [
     image: '/images/job.jpg',
   },
   {
-    name: 'Pisty Phil Mathew',
+    name: 'Pisty Mathew',
     title: 'DEACON',
     image: '/images/pisty.jpg',
   },
@@ -167,13 +202,128 @@ export const contactUsContent = {
   address:
     ' 90, Osborne Rd, near Lake Side Hospital, Hermit Colony, Sivanchetti Gardens, Bengaluru, Karnataka 560042',
   addressImage: '/images/map.jpg',
+  disclaimer:
+    'When filling out this form, we kindly request that you respect the content provided. Once your information is received, we will promptly respond to your request. Your message is valuable to us, and we appreciate your cooperation and understanding.',
 };
+
+export const contactUsFAQ = [
+  {
+    question1: 'What are the core beliefs of the church?',
+    answer1: (
+      <>
+        <p>
+          We are a gospel-centered community that celebrates the life, death,
+          resurrection and teachings of Jesus. To know more, please go through
+          the{' '}
+          <Link className='underline hover:text-coral' href='/what-we-believe'>
+            'Our Beliefs'
+          </Link>{' '}
+          and the{' '}
+          <Link className='underline hover:text-coral' href='/who-we-are'>
+            'Who We Are'
+          </Link>{' '}
+          pages.
+        </p>
+      </>
+    ),
+    question2: 'Who leads the church?',
+    answer2: (
+      <>
+        <p>
+          At Calvary Bible Fellowship, a team of{' '}
+          <Link className='underline hover:text-coral' href='/elders'>
+            'Elders'
+          </Link>{' '}
+          carry the responsibility of overseeing the mission, vision, life and
+          doctrine of the church. They do this largely by empowering and caring
+          for the men and women who serve the church to lead ministries, take
+          bible studies, and care for the flock.
+        </p>
+      </>
+    ),
+  },
+  {
+    question1: 'I`m skeptical about Christianity, am I still welcome?',
+    answer1: (
+      <>
+        <p>
+          Yes. Calvary Bible Fellowship was started with you in mind. Please
+          bring your doubts, your brain, and your baggage — they are all welcome
+          here. You will have the opportunity to learn more, ask questions,
+          share hurts from past experiences, all at your own pace. In fact, you
+          can reach out to any of the elders with your big questions any time —
+          even right now. We will always be eager to hear from you.
+        </p>
+      </>
+    ),
+    question2: 'What does the church believe about marriage?',
+    answer2: (
+      <>
+        <p>
+          The Bible consistently defines marriage as a covenant relationship
+          instituted by God with 3 parties involved — a woman, a man, and God
+          himself. Scripture is also clear that sex is a gift — one meant to be
+          enjoyed within a life-long, covenantal, monogamous, heterosexual
+          marriage.
+        </p>
+      </>
+    ),
+  },
+  {
+    question1: 'What is the Gospel?',
+    answer1: (
+      <>
+        <p>
+          We all recognize the brokenness of our world. We see it everywhere and
+          we know it all too well: it’s in the corrupt failing of human systems,
+          in the hurt we’ve known from others, and even in the selfish leanings
+          of our own hearts. But where is the beauty? Where can we find hope?{' '}
+        </p>
+        <p>
+          We believe hope is found in the person of Jesus Christ. He was a real
+          human that existed in history and also the one true God who’d come to
+          save the world. God is personal and powerful. He came in Jesus — not
+          to condemn the world, but to save it. He is good, and is known by his
+          love.
+        </p>
+        <p>
+          {' '}
+          He is the initiator. He personally invites the world to hope,
+          belonging and purpose. That invitation extends to you. The God who
+          created the universe loves you, died for you, and more than anything,
+          he wants you to know him.
+        </p>
+        <p>
+          {' '}
+          We want you to trust Jesus with your everything. You don’t have to
+          come to church first, and you don’t have to have it all figured out. A
+          relationship with God starts with trust. Trust that he is good. Trust
+          that his way of life will mean more good for you than your own desires
+          or opinions.
+        </p>
+        <p>
+          {' '}
+          You can talk to him right now. That’s where it starts. Tell him you
+          trust him with your whole heart. Tell him you’re turning your whole
+          life over to him. He hears you.
+        </p>
+      </>
+    ),
+  },
+];
 
 export const NotFoundContent = {
   title: 'Page Not Found',
   description:
     'The page you requested does not exist, or there may have been an error. Please check the URL or contact support if you believe this is an error.',
   link: 'Go Home',
+};
+
+export const ErrorContent = {
+  title: 'Oops, something went wrong!',
+  description:
+    'Oops! Something went wrong. We`re working to fix it. Please try again later. If the problem persists, contact our support team for assistance.',
+  link: ' Try again',
 };
 
 export const otherPages = [
@@ -243,6 +393,21 @@ export const footerAboutLinks = [
   {
     title: 'Care Groups',
     link: '/care-groups',
+  },
+];
+
+export const footerSocialLinks = [
+  {
+    link: 'https://www.youtube.com/channel/UCE0ODfrD_TjdTySfNv9ggeQ',
+    component: <Youtube />,
+  },
+  {
+    link: 'https://open.spotify.com/show/07dGkNxqaELnimZKlfqtBY',
+    component: <Spotify />,
+  },
+  {
+    link: 'https://podcasts.apple.com/in/podcast/calvary-bible-fellowship-bangalore/id1528884061',
+    component: <Apple />,
   },
 ];
 
@@ -353,9 +518,9 @@ export const aboutMenuSection = {
 };
 
 export const connectMenuSection = {
-  title: 'Connect, Learn, Give',
+  title: 'Listen, Learn, Apply',
   description:
-    'Discover more ways to engage with Calvary Bible Fellowship. Explore our Care Group schedule, find answers to FAQs, and learn how to contribute. Connect with us through these valuable sermons.',
+    'Explore a plethora of sermon series that delve into various biblical themes, providing comprehensive insights into spiritual growth and understanding..',
 };
 
 export const sermonPageSermons = [
@@ -487,6 +652,124 @@ export const whatWeDoContent = [
     description:
       'We serve our community by helping to meet their physical and spiritual needs. ',
     image: '/images/heart.png',
+  },
+];
+
+export const careGroups = [
+  {
+    title: 'HORMAVU',
+    content: (
+      <>
+        <div className='carousel-cell w-full'>
+          <h3>Hormavu Cell Group</h3>
+          <p className='subhead'>Time : 7:15PM</p>
+          <div className='md:text-sm lg:text-base xl:text-lg'>
+            <p>
+              <strong>Spocs: Jaison George, Job Sam Koshy</strong>
+            </p>
+            <p>
+              The Hormavu Care group gathers in the Hormavu area every Friday
+              evening at 7:15 PM, rotating between different homes. They spend
+              their time singing together, sharing, and learning from the Word
+              of God.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+    image: '/images/hormavu.jpg',
+  },
+  {
+    title: 'HENNUR',
+    content: (
+      <>
+        <div className='carousel-cell w-full'>
+          <h3>Hennur Care Group</h3>
+          <p className='subhead'>Time : 7:30PM</p>
+          <div className='md:text-sm lg:text-base xl:text-lg'>
+            <p>
+              <strong>Spocs: Siji George, Prithvi G</strong>
+            </p>
+            <p>
+              The Hennur Care group convenes in the Hennur area every Friday at
+              7:30 PM, rotating between different homes each week. During these
+              gatherings, they participate in singing, sharing, and studying the
+              Word of God together.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+    image: '/images/hennur.jpg',
+  },
+  {
+    title: 'KOTHANUR',
+    content: (
+      <>
+        <div className='carousel-cell w-full'>
+          <h3>Kothanur Care Group</h3>
+          <p className='subhead'>Time : 7:30PM</p>
+          <div className='md:text-sm lg:text-base xl:text-lg'>
+            <p>
+              <strong>Spocs: Kishor Hegde, Jestin James</strong>
+            </p>
+            <p>
+              The Kothanur Care group assembles in the Kothanur area every
+              Friday at 7:30 PM, rotating among various homes. During these
+              gatherings, they engage in singing, sharing, and reflecting on the
+              teachings of the Word of God together.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+    image: '/images/kothanur.jpg',
+  },
+  {
+    title: 'OLD MADRAS ROAD',
+    content: (
+      <>
+        <div className='carousel-cell w-full'>
+          <h3>Kothanur Care Group</h3>
+          <p className='subhead'>Time : 7:30PM</p>
+          <div className='md:text-sm lg:text-base xl:text-lg'>
+            <p>
+              <strong>Spocs: Prashant Raja, John Paul</strong>
+            </p>
+            <p>
+              The Old Madras Road Care group convenes every Friday at 7:30 PM in
+              the Old Madras Road area, rotating locations among different
+              homes. During these gatherings, they come together to sing, share,
+              and delve into the teachings of the Word of God.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+    image: '/images/omr.jpg',
+  },
+  {
+    title: 'MALAYALAM',
+    content: (
+      <>
+        <div className='carousel-cell w-full'>
+          <h3>Malayalam Care Group</h3>
+          <p className='subhead'>Time : 6:30PM</p>
+          <div className='md:text-sm lg:text-base xl:text-lg'>
+            <p>
+              <strong>Spocs: Binny Abraham, George Joseph</strong>
+            </p>
+            <p>
+              The Malayalam Care Group convenes every Tuesday at 6:30 PM in the
+              Old Madras Road area, rotating locations among different homes and
+              sometimes over Zoom. During these gatherings, they come together
+              to sing, share, and delve into the teachings of the Word of God.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+    image: '/images/malayalam.jpg',
   },
 ];
 

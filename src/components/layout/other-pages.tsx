@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import RightArrow from '~/svg/RightArrow.svg';
 interface OtherData {
   title: string;
   link: string;
@@ -29,16 +30,7 @@ export function OtherPages({
                 <p className='subhead'>{title1}</p>
                 <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>{desc1}</h3>
                 <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                  <svg
-                    className='w-6 h-6'
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 23.6 18.2'
-                  >
-                    <path
-                      fill='currentColor'
-                      d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
-                    ></path>
-                  </svg>
+                  <RightArrow className='w-6 h-6' />
                 </div>
               </Link>
             </div>
@@ -50,16 +42,7 @@ export function OtherPages({
                 <p className='subhead'>{title2}</p>
                 <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>{desc2}</h3>
                 <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                  <svg
-                    className='w-6 h-6'
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 23.6 18.2'
-                  >
-                    <path
-                      fill='currentColor'
-                      d='M23.6 9.138c0-.2-.1-.5-.3-.7l-7.7-8.1c-.4-.4-.9-.4-1.4 0-.4.3-.4 1 0 1.4l6.1 6.5H1c-.5 0-1 .4-1 1 0 .5.4 1 1 1h19.5l-6.1 6.5c-.3.4-.3 1 0 1.4.4.4 1 .3 1.4 0l7.7-8.1c.1-.5.1-.7.1-.9z'
-                    ></path>
-                  </svg>
+                  <RightArrow className='w-6 h-6' />
                 </div>
               </Link>
             </div>

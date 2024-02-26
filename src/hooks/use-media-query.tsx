@@ -1,19 +1,29 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 
-export function useMediaQuery(query: string) {
-  const [value, setValue] = React.useState(false);
+export function useMediaQuery() {
+  const [width, setWidth] = useState(window.innerWidth);
 
-  React.useEffect(() => {
-    function onChange(event: MediaQueryListEvent) {
-      setValue(event.matches);
-    }
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
 
-    const result = matchMedia(query);
-    result.addEventListener('change', onChange);
-    setValue(result.matches);
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    };
+  }, []);
 
-    return () => result.removeEventListener('change', onChange);
-  }, [query]);
+  const handleOrientationChange = () => {
+    setWidth(screen.width);
+  };
 
-  return value;
+  useEffect(() => {
+    window.addEventListener('orientationchange', handleOrientationChange);
+    return () => {
+      window.removeEventListener('orientationchange', handleOrientationChange);
+    };
+  }, []);
+
+  return width <= 768;
 }
