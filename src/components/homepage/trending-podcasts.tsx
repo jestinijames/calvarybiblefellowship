@@ -1,9 +1,8 @@
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { homepagePodcasts, homepageTrendingPodcasts } from '@/constant/config';
-
-import RightArrow from '~/svg/RightArrow.svg';
 
 export function TrendingPodcasts() {
   return (
@@ -62,7 +61,7 @@ export function TrendingPodcasts() {
                             <span className='font-sans font-bold'>
                               {homepageTrendingPodcasts.subtitle2}
                             </span>
-                            <RightArrow className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin' />
+                            <ArrowRight className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin' />
                           </div>
                         </Link>
                       </div>

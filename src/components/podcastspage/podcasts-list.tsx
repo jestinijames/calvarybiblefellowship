@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -5,8 +6,6 @@ import { useState } from 'react';
 import { SubHeading } from '@/components/layout/sub-heading';
 
 import { homepagePodcasts, podcastPageHero } from '@/constant/config';
-
-import RightArrow from '~/svg/RightArrow.svg';
 
 export function PodcastsList() {
   const [visibleItems, setVisibleItems] = useState(2);
@@ -61,7 +60,7 @@ export function PodcastsList() {
                               <span className='font-sans font-bold'>
                                 Explore
                               </span>
-                              <RightArrow className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin' />
+                              <ArrowRight className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin' />
                             </div>
                           </Link>
                         </div>

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 import {
@@ -7,9 +8,6 @@ import {
   otherPages,
   sermonPageSermons,
 } from '@/constant/config';
-
-//import RightArrow from '~/svg/RightArrow.svg';
-import RightArrow from '../../../public/svg/RightArrow.svg';
 
 export function TableOfLinks() {
   return (
@@ -37,7 +35,7 @@ export function TableOfLinks() {
                       >
                         <span>{page.title}</span>
                         <span className='ml-auto mr-4 group-hover:mr-2 transition-margin'>
-                          <RightArrow className='w-4 h-4' />
+                          <ArrowRight className='w-4 h-4' />
                         </span>
                       </Link>
                     </p>
@@ -67,7 +65,7 @@ export function TableOfLinks() {
                       >
                         <span>{page.title}</span>
                         <span className='ml-auto mr-4 group-hover:mr-2 transition-margin'>
-                          <RightArrow className='w-4 h-4' />
+                          <ArrowRight className='w-4 h-4' />
                         </span>
                       </Link>
                     </p>

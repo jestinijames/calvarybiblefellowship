@@ -1,8 +1,8 @@
 import { useWindowScroll } from '@uidotdev/usehooks';
 import { debounce } from 'lodash';
+import { ArrowUp } from 'lucide-react';
 import { useCallback } from 'react';
 
-import UpArrow from '~/svg/UpArrow.svg';
 interface ReturnToTopButtonProps {
   delay?: number;
   isOpen: boolean;
@@ -30,7 +30,7 @@ function ScrollToTopButton({ delay, isOpen }: ReturnToTopButtonProps) {
       
       w-12 h-12 transition-transform duration-200 flex fixed right-10 bottom-10 bg-[#f56d6e] rounded-full shadow-lg shadow-gray-900 justify-center items-center z-50`}
     >
-      <UpArrow className='w-6 h-6' />
+      <ArrowUp className='w-6 h-6' />
     </button>
   );
 }

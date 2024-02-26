@@ -1,8 +1,5 @@
+import { Podcast, Rss, Youtube } from 'lucide-react';
 import Link from 'next/link';
-
-import Apple from '~/svg/Apple.svg';
-import Spotify from '~/svg/Spotify.svg';
-import Youtube from '~/svg/Youtube.svg';
 
 export const siteConfig = {
   title: 'Calvary Bible Fellowship',
@@ -403,11 +400,11 @@ export const footerSocialLinks = [
   },
   {
     link: 'https://open.spotify.com/show/07dGkNxqaELnimZKlfqtBY',
-    component: <Spotify />,
+    component: <Rss />,
   },
   {
     link: 'https://podcasts.apple.com/in/podcast/calvary-bible-fellowship-bangalore/id1528884061',
-    component: <Apple />,
+    component: <Podcast />,
   },
 ];
 

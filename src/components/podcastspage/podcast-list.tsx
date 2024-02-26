@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 import { Bounce, toast } from 'react-toastify';
@@ -11,8 +12,6 @@ import { VideoModal } from '@/components/ui/video-modal';
 
 import { homepagePodcasts, podcastPageHero } from '@/constant/config';
 import { fetchData } from '@/utils/fetch-api';
-
-import RightArrow from '~/svg/RightArrow.svg';
 
 interface Snippet {
   title: string;
@@ -144,7 +143,7 @@ export function PodcastList({ slug }: { slug: string }) {
                               </div>
                               <div className='border-t border-gray-600 flex items-center mt-auto mb-0 py-2'>
                                 <VideoModal video={resourceId.videoId} />
-                                <RightArrow className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin' />
+                                <ArrowRight className='w-4 h-4 ml-auto mr-2 group-hover:mr-0 transition-margin' />
                               </div>
                             </div>
                           </div>

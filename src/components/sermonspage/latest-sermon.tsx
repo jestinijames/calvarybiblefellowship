@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
+import { PlayCircle } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -8,8 +9,6 @@ import Loader from '@/components/ui/loader';
 
 import { sermonPageHero } from '@/constant/config';
 import { useSermonStore } from '@/utils/sermonStore';
-
-import PlayButton from '~/svg/PlayButton.svg';
 
 export function LatestSermon() {
   const { sermon, isLoading, fetchSermon } = useSermonStore();
@@ -50,7 +49,7 @@ export function LatestSermon() {
                         }`}
                         onClick={handlePlayClick}
                       >
-                        <PlayButton className='relative z-30 w-28 h-28 transform scale-90 group-hover:scale-100 transition-transform duration-500' />
+                        <PlayCircle className='relative z-30 w-28 h-28 transform scale-90 group-hover:scale-100 transition-transform duration-500' />
 
                         <div className='absolute top-0 left-0 w-full h-full z-20 bg-black opacity-50 group-hover:opacity-25 transition-opacity duration-500' />
 

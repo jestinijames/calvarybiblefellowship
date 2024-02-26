@@ -1,6 +1,6 @@
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-import RightArrow from '~/svg/RightArrow.svg';
 interface OtherData {
   title: string;
   link: string;
@@ -30,7 +30,7 @@ export function OtherPages({
                 <p className='subhead'>{title1}</p>
                 <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>{desc1}</h3>
                 <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                  <RightArrow className='w-6 h-6' />
+                  <ArrowRight className='w-6 h-6' />
                 </div>
               </Link>
             </div>
@@ -42,7 +42,7 @@ export function OtherPages({
                 <p className='subhead'>{title2}</p>
                 <h3 className='pb-8 md:pb-12 sm:pr-8 lg:pr-16'>{desc2}</h3>
                 <div className='mt-auto mb-2 ml-0 group-hover:ml-2 transition-margin'>
-                  <RightArrow className='w-6 h-6' />
+                  <ArrowRight className='w-6 h-6' />
                 </div>
               </Link>
             </div>
