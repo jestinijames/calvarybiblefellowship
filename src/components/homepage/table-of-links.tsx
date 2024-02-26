@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 
 import {
@@ -7,7 +8,8 @@ import {
   sermonPageSermons,
 } from '@/constant/config';
 
-import RightArrow from '~/svg/RightArrow.svg';
+//import RightArrow from '~/svg/RightArrow.svg';
+import RightArrow from '../../../public/svg/RightArrow.svg';
 
 export function TableOfLinks() {
   return (
