@@ -1,12 +1,13 @@
 'use client'; // Error components must be Client Components
 
 import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 import { Bounce, toast } from 'react-toastify';
 
 import { Button } from '@/components/ui/button';
 
-import { ErrorContent } from '@/constant/config';
+import { ErrorContent, NotFoundContent } from '@/constant/config';
 export default function Error({
   error,
   reset,
@@ -48,6 +49,15 @@ export default function Error({
                     >
                       <span>{ErrorContent.link}</span>
                     </Button>
+                  </p>
+                  <p>
+                    <Link
+                      className='btn items-center group outline'
+                      href='/'
+                      data-barba-prevent='self'
+                    >
+                      <span>{NotFoundContent.link}</span>
+                    </Link>
                   </p>
                 </div>
                 <div

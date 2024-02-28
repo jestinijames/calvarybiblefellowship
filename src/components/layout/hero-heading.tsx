@@ -46,10 +46,14 @@ export function HeroHeading({ data }: HeroProps) {
               style={{ transform: 'translate3d(0px, -33px, 0px)' }}
             >
               <Image
-                className='relative lazyloaded'
+                data-loaded='false'
+                onLoad={(event) => {
+                  event.currentTarget.setAttribute('data-loaded', 'true');
+                }}
+                className='relative lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                 width='1300'
                 height='745'
-                alt='Woman in black flowered shirt smiling at camera, cyan diagonal bar over her left shoulder.'
+                alt={title}
                 src={image}
                 sizes='100vw'
               />
@@ -81,7 +85,11 @@ export function AlternateHeroHeading({ data }: AlternativeHeroProps) {
               }}
             >
               <Image
-                className='relative '
+                data-loaded='false'
+                onLoad={(event) => {
+                  event.currentTarget.setAttribute('data-loaded', 'true');
+                }}
+                className='relative data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                 src={image}
                 width='1984'
                 height='380'

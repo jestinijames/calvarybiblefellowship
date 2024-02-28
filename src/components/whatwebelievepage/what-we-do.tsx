@@ -31,6 +31,14 @@ export function WhatWeDo() {
                         <div className='xl:pr-4'>
                           <div className='w-24 h-24 flex items-center justify-center my-4 md:my-6 mx-auto'>
                             <Image
+                              data-loaded='false'
+                              onLoad={(event) => {
+                                event.currentTarget.setAttribute(
+                                  'data-loaded',
+                                  'true'
+                                );
+                              }}
+                              className='data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                               src={content.image}
                               width='71'
                               height='72'

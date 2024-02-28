@@ -42,10 +42,17 @@ export function TrendingPodcasts() {
                           className='group w-full h-full flex flex-col headline-defaults copy-defaults fade-hover-area-trigger'
                         >
                           <Image
-                            className='w-full mb-6 ls-is-cached lazyloaded'
+                            data-loaded='false'
+                            onLoad={(event) => {
+                              event.currentTarget.setAttribute(
+                                'data-loaded',
+                                'true'
+                              );
+                            }}
+                            className='w-full mb-6 ls-is-cached lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                             width='1200'
                             height='750'
-                            alt='Open whitepaper book, with cover How to Eat an Airplane.'
+                            alt={podcast.title}
                             src={podcast.image}
                             sizes='100vw'
                           />

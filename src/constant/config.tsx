@@ -389,7 +389,7 @@ export const footerAboutLinks = [
   },
   {
     title: 'Care Groups',
-    link: '/care-groups',
+    link: '/what-we-believe',
   },
 ];
 
@@ -1054,7 +1054,7 @@ export const timelineItems = [
       type: 'IMAGE',
     },
 
-    cardDetailedText: `Eventually, CBF was blessed with more members and moved to WCOI on Osborne Road.`,
+    cardDetailedText: `Eventually, CBF was blessed with more members and moved to "World Cassette Outreach of India" on Osborne Road.`,
   },
   {
     title: '2022',
@@ -1080,6 +1080,6 @@ export const timelineItems = [
       type: 'IMAGE',
     },
 
-    cardDetailedText: `Today, CBF is a growing and diverse congregation of all ages and backgrounds. In addition to Sunday worship meetings at WCOI, CBF conducts regular Bible studies, prayer meetings and a number of care cells throughout the week to help believers grow spiritually and build deep and lasting relationships with each other. The church is also involved with missions and social outreach in Bangalore and across India. The members of CBF continue to support the mission of the church as God adds chapter after chapter to our continuing story.`,
+    cardDetailedText: `Today, CBF is a growing and diverse congregation of all ages and backgrounds. In addition to Sunday worship meetings at World Cassette Outreach of India (WCOI), CBF conducts regular Bible studies, prayer meetings and a number of care cells throughout the week to help believers grow spiritually and build deep and lasting relationships with each other. The church is also involved with missions and social outreach in Bangalore and across India. The members of CBF continue to support the mission of the church as God adds chapter after chapter to our continuing story.`,
   },
 ];

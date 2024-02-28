@@ -69,7 +69,11 @@ export function Header({
               <li className='ml-10 mr-4 mt-1 hidden xl:block'>
                 <Link className='no-child-pointers block' href='/'>
                   <Image
-                    className='sb_logo'
+                    data-loaded='false'
+                    onLoad={(event) => {
+                      event.currentTarget.setAttribute('data-loaded', 'true');
+                    }}
+                    className='data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                     src='/logos/CBF_WT_Full.png'
                     alt='CBF Logo'
                     width={250}
@@ -223,14 +227,21 @@ export function Header({
             </div>
             <Link className='block no-child-pointers ml-2' href='/'>
               <Image
-                className='sb_logo'
+                data-loaded='false'
+                onLoad={(event) => {
+                  event.currentTarget.setAttribute('data-loaded', 'true');
+                }}
+                className='data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                 src='/logos/CBF_WT_Full.png'
                 alt='CBF Logo'
                 width={150}
                 height={62}
               />
             </Link>
-            <Link className='block font-sans font-bold text-sm' href='/contact'>
+            <Link
+              className='block font-sans font-bold text-sm'
+              href='/contact-us'
+            >
               Contact
             </Link>
           </div>
@@ -245,7 +256,11 @@ export function Header({
               <li className='ml-10 mr-4 mt-1 hidden xl:block'>
                 <Link className='no-child-pointers block' href='/'>
                   <Image
-                    className='sb_logo'
+                    data-loaded='false'
+                    onLoad={(event) => {
+                      event.currentTarget.setAttribute('data-loaded', 'true');
+                    }}
+                    className='data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                     src='/logos/CBF_WT_Full.png'
                     alt='CBF Logo'
                     width={32}

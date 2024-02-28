@@ -44,7 +44,14 @@ export function PodcastsList() {
                             href={podcast.link}
                           >
                             <Image
-                              className='w-full mb-6 ls-is-cached lazyloaded'
+                              data-loaded='false'
+                              onLoad={(event) => {
+                                event.currentTarget.setAttribute(
+                                  'data-loaded',
+                                  'true'
+                                );
+                              }}
+                              className='w-full mb-6 ls-is-cached lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                               width='1600'
                               height='960'
                               alt={podcast.title}

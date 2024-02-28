@@ -24,7 +24,11 @@ export function DeaconsList() {
                   className='px-4 my-8 headline-defaults copy-defaults w-full md:flex-1 shadow-md mx-2 md:my-2 '
                 >
                   <Image
-                    className='w-full mb-8 ls-is-cached object-cover lazyloaded rounded-full '
+                    data-loaded='false'
+                    onLoad={(event) => {
+                      event.currentTarget.setAttribute('data-loaded', 'true');
+                    }}
+                    className='w-full mb-8 ls-is-cached object-cover lazyloaded rounded-full data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                     width='1560'
                     height='1000'
                     alt={deacon.name}

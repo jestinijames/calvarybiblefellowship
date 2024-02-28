@@ -18,10 +18,14 @@ export function Footer() {
           {/* Logo */}
           <div className='w-full xl:w-2/5 px-4'>
             <Image
+              data-loaded='false'
+              onLoad={(event) => {
+                event.currentTarget.setAttribute('data-loaded', 'true');
+              }}
               src='/logos/CBF_WT_Full_Coral.png'
               alt='bg'
               loading='eager'
-              className='object-cover'
+              className='object-cover data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
               height={200}
               width={400}
             />

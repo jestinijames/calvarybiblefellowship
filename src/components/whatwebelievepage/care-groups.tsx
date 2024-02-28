@@ -23,7 +23,11 @@ export function CareGroups() {
             <div className='w-full md:w-1/2'>
               <div className='decoupled-carousel bg-navy relative w-full'>
                 <Image
-                  className='w-full lazyloaded'
+                  data-loaded='false'
+                  onLoad={(event) => {
+                    event.currentTarget.setAttribute('data-loaded', 'true');
+                  }}
+                  className='w-full lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                   width='1840'
                   height='1740'
                   alt={careGroups[tab].title}

@@ -8,7 +8,11 @@ export function ChurchLocation() {
     <section className='relative z-10 overflow-hidden bg-black text-white'>
       <div className='absolute z-10 w-full h-full top-0 left-0'>
         <Image
-          className='absolute top-0 left-0 w-full h-full object-cover ls-is-cached lazyloaded'
+          data-loaded='false'
+          onLoad={(event) => {
+            event.currentTarget.setAttribute('data-loaded', 'true');
+          }}
+          className='absolute top-0 left-0 w-full h-full object-cover ls-is-cached lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
           width='3840'
           height='1560'
           alt={homepageChurchLocation.title}

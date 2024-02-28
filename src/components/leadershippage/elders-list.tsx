@@ -1,16 +1,16 @@
 import Image from 'next/image';
 
 import {
-  Jestinian,
-  JestinianBody,
-  JestinianClose,
-  JestinianContent,
-  JestinianDescription,
-  JestinianFooter,
-  JestinianHeader,
-  JestinianTitle,
-  JestinianTrigger,
-} from '@/components/craft/jestinian';
+  Credenza,
+  CredenzaBody,
+  CredenzaClose,
+  CredenzaContent,
+  CredenzaDescription,
+  CredenzaFooter,
+  CredenzaHeader,
+  CredenzaTitle,
+  CredenzaTrigger,
+} from '@/components/craft/credenza';
 import { SubHeading } from '@/components/layout/sub-heading';
 import { Button } from '@/components/ui/button';
 
@@ -36,7 +36,11 @@ export function EldersList() {
                   className='px-4 my-8 headline-defaults copy-defaults w-full md:flex-1 shadow-md mx-2 md:my-2 '
                 >
                   <Image
-                    className='w-full mb-8 ls-is-cached object-cover lazyloaded rounded-full '
+                    data-loaded='false'
+                    onLoad={(event) => {
+                      event.currentTarget.setAttribute('data-loaded', 'true');
+                    }}
+                    className='w-full mb-8 ls-is-cached object-cover lazyloaded rounded-full data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                     width='1560'
                     height='1000'
                     alt={elder.name}
@@ -46,29 +50,29 @@ export function EldersList() {
                   <h3 className='text-center'>{elder.name}</h3>
                   <div className='my-8 text-center'>
                     <p>
-                      <Jestinian>
-                        <JestinianTrigger asChild>
+                      <Credenza>
+                        <CredenzaTrigger asChild>
                           <Button className='btn items-center group '>
                             <span>Read More</span>
                           </Button>
-                        </JestinianTrigger>
-                        <JestinianContent className='bg-white text-black'>
-                          <JestinianHeader>
-                            <JestinianTitle>{elder.name}</JestinianTitle>
-                            <JestinianDescription>
+                        </CredenzaTrigger>
+                        <CredenzaContent className='bg-white text-black'>
+                          <CredenzaHeader>
+                            <CredenzaTitle>{elder.name}</CredenzaTitle>
+                            <CredenzaDescription>
                               {elder.title}
-                            </JestinianDescription>
-                          </JestinianHeader>
-                          <JestinianBody className='space-y-4 pb-4 text-center text-sm sm:pb-0 sm:text-left'>
+                            </CredenzaDescription>
+                          </CredenzaHeader>
+                          <CredenzaBody className='space-y-4 pb-4 text-center text-sm sm:pb-0 sm:text-left'>
                             <p>{elder.bio}</p>
-                          </JestinianBody>
-                          <JestinianFooter>
-                            <JestinianClose asChild>
+                          </CredenzaBody>
+                          <CredenzaFooter>
+                            <CredenzaClose asChild>
                               <Button variant='outline'>Close</Button>
-                            </JestinianClose>
-                          </JestinianFooter>
-                        </JestinianContent>
-                      </Jestinian>
+                            </CredenzaClose>
+                          </CredenzaFooter>
+                        </CredenzaContent>
+                      </Credenza>
                     </p>
                   </div>
                 </div>

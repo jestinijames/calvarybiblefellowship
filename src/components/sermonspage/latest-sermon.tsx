@@ -54,7 +54,14 @@ export function LatestSermon() {
                         <div className='absolute top-0 left-0 w-full h-full z-20 bg-black opacity-50 group-hover:opacity-25 transition-opacity duration-500' />
 
                         <Image
-                          className='absolute z-10 top-0 left-0 w-full h-full object-cover ls-is-cached lazyloaded'
+                          data-loaded='false'
+                          onLoad={(event) => {
+                            event.currentTarget.setAttribute(
+                              'data-loaded',
+                              'true'
+                            );
+                          }}
+                          className='absolute z-10 top-0 left-0 w-full h-full object-cover ls-is-cached lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                           width='2518'
                           height='1416'
                           alt={sermonPageHero.latestSermonTitle}

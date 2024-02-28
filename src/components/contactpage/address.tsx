@@ -52,10 +52,14 @@ export function Address() {
             <div className='w-full px-4 md:w-7/12'>
               <div className='my-4'>
                 <Image
-                  className=' lazyloaded'
+                  data-loaded='false'
+                  onLoad={(event) => {
+                    event.currentTarget.setAttribute('data-loaded', 'true');
+                  }}
+                  className=' lazyloaded data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10'
                   width='1000'
                   height='709'
-                  alt='Inside of whitepaper book against black background.'
+                  alt={contactUsContent.addressTitle}
                   src={contactUsContent.addressImage}
                   data-srcset=''
                   sizes='100vw'

@@ -154,7 +154,14 @@ export function SermonList({ slug }: { slug: string }) {
                               //href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
                             >
                               <Image
-                                className='w-full mb-6 ls-is-cached lazyloaded'
+                                data-loaded='false'
+                                onLoad={(event) => {
+                                  event.currentTarget.setAttribute(
+                                    'data-loaded',
+                                    'true'
+                                  );
+                                }}
+                                className='data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10 w-full mb-6 ls-is-cached lazyloaded'
                                 width='1200'
                                 height='750'
                                 alt={title}
