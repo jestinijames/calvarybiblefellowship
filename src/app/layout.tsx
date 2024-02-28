@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   authors: [
     {
-      name: 'Credenza James',
+      name: 'Jestin James',
       url: 'https://cbf-church.org/',
     },
   ],
