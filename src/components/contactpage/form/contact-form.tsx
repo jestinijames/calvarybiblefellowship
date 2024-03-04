@@ -1,10 +1,13 @@
+'use client';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import emailjs from 'emailjs-com';
 import Link from 'next/link';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { Bounce, toast } from 'react-toastify';
 import { z } from 'zod';
 
+import { sendEmail } from '@/components/contactpage/form/_actions';
+import { ContactFormSchema } from '@/components/contactpage/form/schema';
 import {
   Form,
   FormControl,
@@ -17,83 +20,52 @@ import { Textarea } from '@/components/ui/textarea';
 
 import { contactUsContent, siteConfig } from '@/constant/config';
 
-const formSchema = z.object({
-  firstname: z
-    .string()
-    .min(3, 'First name must be at least 3 characters')
-    .max(140, 'You have exceeded the limit'),
-  lastname: z
-    .string()
-    .min(3, 'Last name must be at least 3 characters')
-    .max(140, 'You have exceeded the limit'),
-  email: z
-    .string()
-    .email('Invalid email address')
-    .max(140, 'You have exceeded the limit'),
-  phone: z
-    .string()
-    .min(3, 'Phone number must be at least 3 characters')
-    .max(140, 'You have exceeded the limit'),
-  message: z
-    .string()
-    .min(10, 'Message needs to be atleast 10 characters')
-    .max(200, 'You have exceeded the limit'),
-});
+export type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 
-export function ContactForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      firstname: '',
-      lastname: '',
-      email: '',
-      phone: '',
-      message: '',
-    },
+export default function ContactForm() {
+  const form = useForm<ContactFormInputs>({
+    resolver: zodResolver(ContactFormSchema),
   });
+  const {
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = form;
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const emailServiceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
-      ? process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
-      : '';
+  const processForm: SubmitHandler<ContactFormInputs> = async (data) => {
+    const result = await sendEmail(data);
 
-    const emailTemplateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID
-      ? process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID
-      : '';
-    const emailUserId = process.env.NEXT_PUBLIC_EMAIL_USER_ID
-      ? process.env.NEXT_PUBLIC_EMAIL_USER_ID
-      : '';
+    if (result?.success) {
+      //console.log({ data: result.data });
+      toast.success('Email sent!', {
+        position: 'bottom-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Bounce,
+      });
+      reset();
+      return;
+    }
 
-    emailjs.send(emailServiceId, emailTemplateId, values, emailUserId).then(
-      (result) => {
-        toast.success(`Form has been submitted: ${result.text}`, {
-          position: 'bottom-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          transition: Bounce,
-        });
-      },
-      (error) => {
-        toast.error(`Unable to submit form at this time: ${error}`, {
-          position: 'bottom-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          transition: Bounce,
-        });
-      }
-    );
-    form.reset();
-  }
+    // toast error
+    //console.log(result?.error);
+    toast.error(`Something went wrong! ${result?.error}`, {
+      position: 'bottom-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+      transition: Bounce,
+    });
+  };
 
   return (
     <section className='relative flex items-center pt-8 lg:pt-16'>
@@ -126,29 +98,16 @@ export function ContactForm() {
             <Form {...form}>
               <form
                 id='contactForm'
-                onSubmit={form.handleSubmit(onSubmit)}
+                onSubmit={handleSubmit(processForm)}
                 className='form-defaults xs:mt-8'
               >
                 <FormField
                   control={form.control}
-                  name='firstname'
+                  name='name'
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder='First Name*' {...field} />
-                      </FormControl>
-
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name='lastname'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input placeholder='Last Name*' {...field} />
+                        <Input placeholder='Your Name*' {...field} />
                       </FormControl>
 
                       <FormMessage />
@@ -162,19 +121,6 @@ export function ContactForm() {
                     <FormItem>
                       <FormControl>
                         <Input placeholder='Email Address*' {...field} />
-                      </FormControl>
-
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name='phone'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input placeholder='Phone' {...field} />
                       </FormControl>
 
                       <FormMessage />
@@ -203,7 +149,11 @@ export function ContactForm() {
                 <div className='my-12 text-sm'>
                   <p>{contactUsContent.disclaimer}</p>
                 </div>
-                <input type='submit' value='Send' />
+                <input
+                  disabled={isSubmitting}
+                  type='submit'
+                  value={isSubmitting ? 'Sending...' : 'Send'}
+                />
               </form>
             </Form>
           </div>

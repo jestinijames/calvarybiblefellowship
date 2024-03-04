@@ -5,8 +5,8 @@ import React from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Address } from '@/components/contactpage/address';
-import { ContactForm } from '@/components/contactpage/contact-form';
 import { FAQ } from '@/components/contactpage/faq';
+import ContactForm from '@/components/contactpage/form/contact-form';
 import { HeroHeading } from '@/components/layout/hero-heading';
 import { OtherPages } from '@/components/layout/other-pages';
 import { PageLayout } from '@/components/layout/page-layout';

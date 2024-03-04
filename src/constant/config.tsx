@@ -193,12 +193,12 @@ export const contactUsContent = {
   description:
     'Our Contact Us page is a dedicated platform for users to reach out and connect with us. Whether you have questions, feedback, or need support, we`re here to listen and assist you.',
   image: '/images/contact.jpg',
-  location: 'https://maps.app.goo.gl/sLkPBuLvFUi3DKVv6',
+  location: 'https://maps.app.goo.gl/FJJRHXKRXoFJGJPN7',
   addressHeading: 'Sunday Gathering Location',
-  addressTitle: 'World Cassette Outreach Of India (WCOI)',
+  addressTitle: 'Calvary Bible Fellowship',
   address:
     ' 90, Osborne Rd, near Lake Side Hospital, Hermit Colony, Sivanchetti Gardens, Bengaluru, Karnataka 560042',
-  addressImage: '/images/map.jpg',
+  addressImage: '/images/jest.jpg',
   disclaimer:
     'When filling out this form, we kindly request that you respect the content provided. Once your information is received, we will promptly respond to your request. Your message is valuable to us, and we appreciate your cooperation and understanding.',
 };
