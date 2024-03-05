@@ -1,9 +1,6 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  '@emailjs/browser':
-    specifier: ^4.2.0
-    version: 4.2.0
   '@hookform/resolvers':
     specifier: ^3.3.4
     version: 3.3.4(react-hook-form@7.51.0)
@@ -55,12 +52,12 @@ dependencies:
   react-hook-recaptcha:
     specifier: ^2.0.1
     version: 2.0.1
-  react-icons:
-    specifier: ^4.12.0
-    version: 4.12.0(react@18.2.0)
   react-player:
     specifier: ^2.15.1
     version: 2.15.1(react@18.2.0)
+  react-reftagger:
+    specifier: ^2.1.0
+    version: 2.1.0
   react-toastify:
     specifier: ^10.0.4
     version: 10.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -1628,11 +1625,6 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
-
-  /@emailjs/browser@4.2.0:
-    resolution: {integrity: sha512-f1uOhThjn7tBX78rjpnkxEQhtEsMk05ZzU8LuqlJ41pT705fnJ77oMzKYXU3+X75EytlRKseHTLjtsy8oKTMEw==}
-    engines: {node: '>=14.0.0'}
-    dev: false
 
   /@emotion/is-prop-valid@0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
@@ -7234,14 +7226,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-icons@4.12.0(react@18.2.0):
-    resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      react: 18.2.0
-    dev: false
-
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -7264,6 +7248,10 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-fast-compare: 3.2.2
+    dev: false
+
+  /react-reftagger@2.1.0:
+    resolution: {integrity: sha512-USKROYm3ZaFj73KpsAgQWsfnr8eWuIWR22AjRIjPaKrRIEe/mi8WLUxb3k6uWcCimCOd7kpiqeJFpyMHkX65kw==}
     dev: false
 
   /react-remove-scroll-bar@2.3.5(@types/react@18.2.61)(react@18.2.0):

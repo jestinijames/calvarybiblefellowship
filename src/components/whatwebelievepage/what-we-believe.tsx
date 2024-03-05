@@ -1,10 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useMemo, useState } from 'react';
+import { RefTagger } from 'react-reftagger';
 
 import { SubHeading } from '@/components/layout/sub-heading';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { ourBeliefs, whatWeBelieveHero } from '@/constant/config';
+
+const customStyles = {
+  heading: {
+    backgroundColor: '#f56d6e',
+    color: '#ffffff',
+    fontSize: '16px',
+  },
+
+  body: {
+    color: '#ffffff !important',
+    backgroundColor: '#f56d6e',
+    moreLink: {
+      color: '#ffffff',
+    },
+  },
+};
 
 export function WhatWeBelieve() {
   const tabList = useMemo(() => Object.keys(ourBeliefs), []);
@@ -52,6 +69,12 @@ export function WhatWeBelieve() {
   );
   return (
     <>
+      {/* Scripture References */}
+      <RefTagger
+        tooltipStyle='dark'
+        customStyle={customStyles}
+        bibleVersion='ESV'
+      />
       {/* Sub-Heading */}
       <SubHeading
         title={whatWeBelieveHero.whatWeBelieveTitle}
