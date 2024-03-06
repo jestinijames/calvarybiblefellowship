@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import * as React from 'react';
@@ -30,13 +31,6 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/images/og.jpg`],
-    // creator: '@th_clarence',
-  },
   authors: [
     {
       name: 'Jestin James',
@@ -57,7 +51,10 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={openSans.className}>{children}</body>
+      <body className={openSans.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
