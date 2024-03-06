@@ -5,6 +5,8 @@ export function HeroSection() {
     <section className='relative flex items-center overflow-hidden pt-16 md:pt-32 lg:min-h-hero'>
       <div className='wrapper py-12 md:py-24 lg:py-32'>
         <div className='flex flex-wrap copy-defaults  '>
+          <div className='absolute z-20 w-full h-full top-0 left-0 bg-[#d24c4e] opacity-50' />
+          {/* Text content */}
           <div className='w-full md:w-3/4 xl:w-1/2 px-4 z-20 headline-defaults copy-defaults relative '>
             <h1 className=''>
               <span className='text-sm font-medium uppercase'>

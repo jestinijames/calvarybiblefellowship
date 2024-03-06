@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import * as React from 'react';
@@ -22,15 +23,6 @@ export const metadata: Metadata = {
     apple: '/favicon/apple-touch-icon.png',
   },
   manifest: `/favicon/site.webmanifest`,
-  openGraph: {
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
-    images: [`${siteConfig.url}/images/og.jpg`],
-    type: 'website',
-    locale: 'en_US',
-  },
   authors: [
     {
       name: 'Jestin James',
@@ -53,7 +45,9 @@ export default function RootLayout({
     <html>
       <body className={openSans.className}>
         {children}
+        {/* Vercel */}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
