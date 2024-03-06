@@ -71,6 +71,7 @@ button {
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
+  outline-color: #f56d6e;
 }
 
 ul {
@@ -177,6 +178,7 @@ textarea {
 select:focus,
 textarea:focus {
   outline: 2px solid transparent;
+  outline-color: #f56d6e;
   outline-offset: 2px;
   --tw-ring-inset: var(--tw-empty);
   /*!*/
@@ -318,17 +320,17 @@ select {
 
 .bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgba(9, 9, 28, var(--tw-bg-opacity));
+  background-color: rgba(8, 8, 30, var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
   --tw-bg-opacity: 1;
-  background-color: rgba(240, 242, 242, var(--tw-bg-opacity));
+  background-color: rgba(247, 241, 238, var(--tw-bg-opacity));
 }
 
 .bg-gray-400 {
   --tw-bg-opacity: 1;
-  background-color: rgba(212, 219, 221, var(--tw-bg-opacity));
+  background-color: rgba(249, 245, 244, var(--tw-bg-opacity));
 }
 
 .bg-gray-800 {
@@ -830,6 +832,7 @@ select {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  outline-color: #f56d6e;
 }
 
 .overflow-auto {
@@ -1649,8 +1652,9 @@ body {
 
 a:focus,
 button:focus {
-  outline: 1px rgba(12, 195, 212, 0.5) solid;
+  outline: 1px rgba(245, 109, 110, 0.5) solid;
   outline-offset: 5px;
+  outline-color: #f56d6e;
 }
 
 blockquote,
@@ -2390,6 +2394,7 @@ ul {
 .flickity-enabled:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  outline-color: #f56d6e;
 }
 
 .flickity-enabled.is-draggable {
@@ -2493,6 +2498,7 @@ ul {
 .flickity-button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  outline-color: #f56d6e;
   box-shadow: 0 0 0 5px #f56d6e;
 }
 
@@ -2632,6 +2638,7 @@ ul {
 .carousel-dots .carousel-dot:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  outline-color: #f56d6e;
 }
 
 .carousel-dots .carousel-dot:hover:before {
@@ -3087,6 +3094,7 @@ ul {
 .custom-menu-toggle:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  outline-color: #f56d6e;
 }
 
 .custom-menu-options {
