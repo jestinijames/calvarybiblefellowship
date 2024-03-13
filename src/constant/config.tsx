@@ -123,10 +123,10 @@ export const leadershipPageHero = {
 
 export const leadershipElders = [
   {
-    name: 'Revanth T',
+    name: 'Benjamin Mathew',
     title: 'ELDER',
-    bio: 'Revanth came to know the Lord when he was 10 years old. Ever since, he has always desired to know the Lord more and make Him known. After a brief stint in the IT industry, he answered God’s call to step into full-time ministry. He is passionate about preaching, teaching God`s Word and theology. His vision is to equip churches by training Christians to study and teach the Word effectively. He also enjoys one-on-one conversation about Christian life. Revanth and his wife Angela have two boys, Asher and Zacharias. Their home is open for people to share good food and conversations about life, faith and cricket.',
-    image: '/images/revanth.jpg',
+    bio: 'Benjamin (Benji) was born in the UAE and came to know Christ during the first Gulf War. After a brief corporate stint, he felt the Lord`s leading to step into missions. He loves connecting with people from different cultures and seeing how the gospel breaks through all barriers. He has a burden for Bible translation, desiring to see God`s Word available to all people groups. He finds missions exciting and adventurous, and loves studying how creation, history and archaeology concur with Scripture. Benji enjoys sports, good jokes, unique cuisines, coffee and meaningful conversation. He and his wife, Preethi, have the joy of raising four daughters and desire to build a discipleship-centric home.',
+    image: '/images/benjamin.jpg',
   },
   {
     name: 'Charles Mathew',
@@ -141,28 +141,18 @@ export const leadershipElders = [
     image: '/images/pradeep.jpg',
   },
   {
-    name: 'Benjamin Mathew',
+    name: 'Revanth T',
     title: 'ELDER',
-    bio: 'Benjamin (Benji) was born in the UAE and came to know Christ during the first Gulf War. After a brief corporate stint, he felt the Lord`s leading to step into missions. He loves connecting with people from different cultures and seeing how the gospel breaks through all barriers. He has a burden for Bible translation, desiring to see God`s Word available to all people groups. He finds missions exciting and adventurous, and loves studying how creation, history and archaeology concur with Scripture. Benji enjoys sports, good jokes, unique cuisines, coffee and meaningful conversation. He and his wife, Preethi, have the joy of raising four daughters and desire to build a discipleship-centric home.',
-    image: '/images/benjamin.jpg',
+    bio: 'Revanth came to know the Lord when he was 10 years old. Ever since, he has always desired to know the Lord more and make Him known. After a brief stint in the IT industry, he answered God’s call to step into full-time ministry. He is passionate about preaching, teaching God`s Word and theology. His vision is to equip churches by training Christians to study and teach the Word effectively. He also enjoys one-on-one conversation about Christian life. Revanth and his wife Angela have two boys, Asher and Zacharias. Their home is open for people to share good food and conversations about life, faith and cricket.',
+    image: '/images/revanth.jpg',
   },
 ];
 
 export const leadershipDeacons = [
   {
-    name: 'John Paul',
-    title: 'DEACON',
-    image: '/images/john.jpg',
-  },
-  {
     name: 'Jaison George',
     title: 'DEACON',
     image: '/images/jaison.jpg',
-  },
-  {
-    name: 'Siji George',
-    title: 'DEACON',
-    image: '/images/siji.jpg',
   },
   {
     name: 'Job Sam Koshy',
@@ -170,19 +160,31 @@ export const leadershipDeacons = [
     image: '/images/job.jpg',
   },
   {
-    name: 'Pisty Mathew',
+    name: 'John Paul',
     title: 'DEACON',
-    image: '/images/pisty.jpg',
+    image: '/images/john.jpg',
   },
   {
     name: 'Kishor Hegde',
     title: 'DEACON',
     image: '/images/kishor.jpg',
   },
+
+  {
+    name: 'Pisty Mathew',
+    title: 'DEACON',
+    image: '/images/pisty.jpg',
+  },
+
   {
     name: 'Prithvi G',
     title: 'DEACON',
     image: '/images/prithvi.jpg',
+  },
+  {
+    name: 'Siji George',
+    title: 'DEACON',
+    image: '/images/siji.jpg',
   },
 ];
 
