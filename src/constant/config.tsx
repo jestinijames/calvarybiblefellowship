@@ -729,7 +729,7 @@ export const careGroups = [
     content: (
       <>
         <div className='carousel-cell w-full'>
-          <h3>Kothanur Care Group</h3>
+          <h3>Old Madras Care Group</h3>
           <p className='subhead'>Time : 7:30PM</p>
           <div className='md:text-sm lg:text-base xl:text-lg'>
             <p>
